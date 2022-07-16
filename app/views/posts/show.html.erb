@@ -1,0 +1,80 @@
+<body class="post-show">
+  <%= render '/layouts/header' %>
+
+<div class="imageList">
+<% if @work.images.present? %>
+<ul class="slider text-center">
+  <% @work.images.each do |img| %>
+    <li class="text-center">
+      <%= image_tag img.url ,class:"m-auto  text-center"   %>
+    </li>
+  <% end %>
+</ul>
+<% end %>
+</div>
+
+ 
+  <div class="postContent ">
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3">案件名</h3>
+      <p><%= @work.title %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 ">事業者名</h3>
+      <p><%= @work.company_name %></p>
+    </div>
+    <div class="mb-5">
+    <% if @work.link.present? %>
+      <h3>事業者ホームページ欄</h3>
+      <p><%= auto_link(simple_format(@work.link), html: {target: '_blank'}) %></p>
+      <% end %>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 ">報酬</h3>
+      <p><%= @work.reward %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 ">仕事内容</h3>
+      <p><%= auto_link(simple_format(@work.pcontent), html: {target: '_blank'}) %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 ">報酬支払日</h3>
+      <p><%= @work.rday %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 ">報酬内容</h3>
+      <p><%= simple_format(@work.rcontent) %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 ">対象地域</h3>
+      <p><%= simple_format(@work.area) %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 ">アピールポイント</h3>
+      <p><%= simple_format(@work.appeal) %></p>
+    </div>
+
+  </div>
+<div class="flex  m-auto mt-5">
+
+
+  <div class="action p-3 mt-4">
+  <a href="/works/<%= @work.id %>/details/new" class="text-white text-decoration-none py-2">
+    掲載主に詳細を聞く
+    </a>
+  </div>
+
+  <div class="action p-3 mt-4">
+  <a href="/works/<%= @work.id %>/introductions/new" class="text-white text-decoration-none py-2">
+    お客様を紹介する
+    </a>
+  </div>
+
+</div>
+  </div>
+  </div>
+
+
+ 
+</body>
+

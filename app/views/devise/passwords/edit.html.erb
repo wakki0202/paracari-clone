@@ -1,0 +1,35 @@
+<body class="devise">
+<div class="login-page mb-5">
+  <div class="formSession  m-auto mt-5 ">
+  <p class="alert"><%= alert %></p>
+  <h2 class="h1 font-weight-bold">パスワード再設定</h2>
+
+   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+
+
+    <div class="formSet mt-4">
+      <div class="text-left">新しいパスワード</div>
+      <%= f.password_field :password, placeholder: ' Password' %>
+
+    </div> 
+
+    <div class="formSet">
+    <div class="text-left">新しいパスワード（確認）</div>
+    <%= f.password_field :password_confirmation,  placeholder: ' Password' %>
+  </div>
+ 
+    
+    <div class="formSet ">
+      <%= f.submit "変更する",class:"button" %>
+    </div> 
+
+      <% end %>
+  
+      <p1 class="message">ログイン<a href="/users/sign_in">こちら</a></p1>
+      <p class="message"><a href="/users/sign_up">まだ登録されてない方はこちら</a></p>
+    </form>
+  </div>
+</div>
+</body>

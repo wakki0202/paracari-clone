@@ -1,0 +1,21 @@
+<%= render "/layouts/header"%>
+<div class="newsIndex">
+
+
+
+
+<div class="newsWrap">
+<h2 class="text-center mb-4 fs-1">お知らせ</h2>
+          <% @news.each do |news| %>
+            
+            
+              <ul class="newsList">
+              
+              <li class="border-bottom border-top pt-2"><a href="/tops/news/<%= news.id %>" class=" px-3 text-decoration-none text-black "><%= news.created_at.strftime('%Y年%m月%d日') %>
+                <div class="text-center fw-bold"><%= news.title %></div></a></li>
+               </ul>
+            
+          <% end %>
+</table>
+        
+</div>

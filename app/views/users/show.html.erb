@@ -1,0 +1,136 @@
+
+
+<body class="providerPage">
+  <div class="side">
+    <%= render '/works/side' %>
+  </div>
+ 
+  <div class="main">
+    
+  <%= render '/works/side_header' %>
+    
+        
+    <div class="userIndex">
+      <h1 class="text-left">ユーザープロフィール</h1>
+      <div class="providerTable pb-5 ">
+      <table class="table w-75 m-auto ">
+      <tbody class="rounded">
+      
+        
+      <tr class="border font-bold w-75 m-auto">
+        <td class=" userLabel py-3">名前</td>
+        <td class=" "><%= @user.name %></td>
+      </tr>
+      <tr class="border">
+        <td class=" userLabel py-3">メールアドレス</td>
+        <td class=""><%= @user.email %></td>
+      </tr>
+
+      <tr class="border">
+        <td class=" userLabel py-3">電話番号</td>
+        <td class=""><%= @user.tel %>
+      </tr>
+
+      <tr class="border">
+        <td class=" userLabel py-3">LINE ID</td>
+        <% if @user.line_id.present? %>
+          <td class=""><%= @user.line_id %>
+        <% else %>
+          <td class="">未記入</td>
+        <% end %>
+      </tr>
+
+      <tr class="border">
+        <td class=" userLabel py-3">生年月日</td>
+        <% if @user.birth_date.present? %>
+          <td class=""><%= @user.birth_date %>
+        <% else %>
+          <td class="">未記入</td>
+        <% end %>
+      </tr>
+
+      <tr class="border">
+        <td class=" userLabel py-3">居住地</td>
+        <% if @user.residence.present? %>
+          <td class=""><%= @user.residence %>
+        <% else %>
+          <td class="">未記入</td>
+        <% end %>
+      </tr>
+
+      <tr class="border">
+        <td class=" userLabel py-3">経歴</td>
+        <% if @user.career.present? %>
+          <td class=""><%= @user.career %>
+        <% else %>
+          <td class="">未記入</td>
+        <% end %>
+      </tr>
+
+      <tr class="border">
+        <td class=" userLabel py-3">アピールポイント</td>
+        <% if @user.appeal.present? %>
+          <td class=""><%= @user.appeal %></td>
+        <% else %>
+          <td class="">未記入</td>
+        <% end %>
+      </tr>
+      <tr class="border">
+        <td class=" userLabel py-3">掲載主からのスカウト連絡</td>
+        <% if @user.headhunt == false %>
+        <td class="">許可しない</td>
+        <% else %>
+        <td class="">許可する</td>
+        <% end %>
+      </tr>
+      <tr class="border">
+        <td class=" userLabel py-3">口座情報(銀行名/支店/口座種類/口座番号)</td>
+        <% if @user.bank == nil %>
+          <td class="">未記入</td>
+        <% else %>
+          <td class=""><%= @user.bank %>/<%= @user.branch %>/<%= @user.account_type %>/<%= @user.account_no %></td>
+        <% end %>
+      </tr>
+       <% if @user.invited_by.present? %>
+      <tr class="border">
+        <td class=" userLabel py-3">紹介者名</td>
+        <td class=""><%= @user.invited_by.name %>
+      </tr>
+      <tr class="border">
+        <td class=" userLabel py-3">紹介者アドレス</td>
+        <td class=""><%= @user.invited_by.email %>
+      </tr>
+      <tr class="border">
+        <td class=" userLabel py-3">紹介者電話番号</td>
+        <td class=""><%= @user.invited_by.tel %>
+      </tr>
+      <% elsif @user.invitername.present? %>
+      <tr class="border">
+        <td class=" userLabel py-3">紹介者名</td>
+        <td class=""><%= @user.invitername %>
+      </tr>
+      <tr class="border">
+        <td class=" userLabel py-3">紹介者アドレス</td>
+        <td class=""><%= @user.inviteremail %>
+      </tr>
+      <tr class="border">
+        <td class=" userLabel py-3">紹介者電話番号</td>
+        <td class=""><%= @user.invitertel %>
+      </tr>
+      <% end %>
+      <% if @user.deleted_at.present? %>
+      <tr class="border">
+        <td class=" userLabel py-3">退会日時</td>
+          <td class=""><%= @user.deleted_at %>
+      </tr>
+      <% end %>
+      </tbody>
+      </table>
+
+     
+       
+      </div>
+    </div>
+
+  </div>
+</body>

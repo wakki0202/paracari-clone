@@ -1,0 +1,71 @@
+
+<body class="providerPage">
+  <div class="side">
+    <%= render '/works/side' %>
+  </div>
+ 
+  <div class="main">
+    
+  <%= render '/works/side_header' %>
+    
+        
+    <div class="userIndex">
+      <h1 class="text-left">ユーザー情報</h1>
+      <div class="providerTable">
+      <%= link_to "csvで出力する",users_index_path(format: :csv),class:"fs-3" %>
+      <div class="search-form">
+        <%= search_form_for @q, url: users_index_path do |f| %>
+            <%= f.label :name_or_tel_or_email, "キーワード",class:"fs-4 " %>
+            <%= f.search_field :name_or_tel_or_email_cont,class:"fs-4 rounded border border-dark" %>
+
+            <%= f.submit "検索",id:"btn",class:"fs-4 " %>
+        <% end %>
+      </div>
+
+        <table class="table userTable">
+        <tr class="heading text-left">
+          <th class="border border-black ">登録日</th>
+          <th class="border border-black ">名前</th>
+          <th class="border border-black ">メールアドレス</th>
+          <th class="border border-black ">電話番号</th>
+          <th class="border border-black ">スカウト</th>
+          <th class="border border-black ">紹介者</th>
+          <th class="border border-black ">ステータス</th>
+        </tr>
+
+        <% @users.each do |user| %> 
+        <% if user.name.present? %>
+        <tr class="border  text-left">
+          <td class="border border-black"><%= l user.created_at %></td>
+          <td class="border border-black"><a href="/users/<%= user.id %>" class="text-decoration-none"><%= user.name %></a></td>
+          <td class="border border-black"><%= user.email %></td>
+          <td class="border border-black"><%= user.tel %></td>
+            <% if user.headhunt == false %>
+            <td class="">不要</td>
+            <% else %>
+            <td class="">必要</td>
+            <% end %>
+           <% if user.invited_by.present? %>
+           <td class="border border-black"><%= user.invited_by.name %></td>
+           <% elsif user.invitername.present? %>
+           <td class="border border-black"><%= user.invitername %></td>
+           <% else %>
+           <td class="border border-black"></td>
+            <% end %>
+            <% if user.deleted_at.present? %>
+            <td class="border border-black">退会済み</td>
+            <% else %>
+           <td class="border border-black"></td>
+            <% end %>
+        </tr>
+        <% end %>
+        <% end %>
+        </table>
+        <div class=" pagenation">
+        <%= paginate @users %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>

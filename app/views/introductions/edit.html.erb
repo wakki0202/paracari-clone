@@ -1,0 +1,33 @@
+
+ <%= form_with(model: [@introduction], local: true ) do |form| %>
+
+ 
+  
+  <div class="field">
+    <%= form.label :口コミ進捗度,class: 'label'  %>
+
+    <%= form.label :進行中,class: 'label'  %>
+    <%= form.radio_button :step, '進行中' %>
+    
+    <%= form.label :断られました,class: 'label'  %>
+    <%= form.radio_button :step, '断られました' %>
+
+    <%= form.label :検討中,class: 'label'  %>
+    <%= form.radio_button :step, '検討中' %>
+
+    <%= form.label :お客様と繋がりませんでした,class: 'label'  %>
+    <%= form.radio_button :step, 'お客様と繋がりませんでした' %>
+
+    <%= form.label :契約成立,class: 'label'  %>
+    <%= form.radio_button :step, '契約成立' %>
+
+    <%= form.label :報酬振込完了,class: 'label'  %>
+    <%= form.radio_button :step, '報酬振込完了' %>
+    
+  </div>
+
+  
+  <div class="actions">
+    <%= form.submit '進捗を更新する',data: { confirm: '更新しますか？' },class: 'submit' %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+
+
+<body class="devise">
+<div class="login-page">
+  <div class="formSession">
+  <h2>ログイン</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <form class="login-form">
+    <p class="notice"><%= alert %></p>
+    <% if @provider.errors.any? %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
+  <% end %>
+
+    <div class="formSet">
+    <div class="text-left">メールアドレス</div>
+      <%= f.email_field :email, autofocus: true, placeholder: ' E-mail' %>
+    </div>
+
+    <div class="formSet mt-4">
+    <div class="text-left">パスワード</div>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: ' Password' %>
+    </div>  
+    
+    <div class="formSet">
+      <%= f.submit "ログインする",class:"button" %>
+    </div> 
+
+      <% if devise_mapping.rememberable? %>
+          
+            <p><%= f.check_box :remember_me,class:"checkbutton" %>ログインを記憶する</p>
+        <% end %>
+
+        <p class="message"><a href="/providers/sign_up">まだ登録されてない方はこちら</a></p>
+      <p class="message"><%= link_to "パスワードをお忘れの方はこちら", new_password_path(resource_name) %></p>
+
+      <% end %>
+
+    </form>
+  </div>
+</div>
+<%= render "providers/shared/links" %>
+</body>

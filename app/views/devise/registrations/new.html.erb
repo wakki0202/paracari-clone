@@ -1,0 +1,70 @@
+<body class="devise">
+<div class="login-page">
+  <div class="formRegistration">
+  <p class="alert"><%= alert %></p>
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <h2 class="h1 fw-bold mb-3">ユーザー登録</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <form class="login-form">
+      <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    
+
+   
+
+      <div class="formSet">
+       <div class="text-left">お名前</div>
+       <%= f.text_field :name, placeholder: '  お名前' %>
+      </div>
+
+      <div class="formSet">
+        <div class="text-left">電話番号</div>
+        <%= f.text_field :tel, placeholder: '  09012345678' %>
+      </div>
+
+      <div class="formSet">
+        <div class="text-left">メールアドレス</div>
+        <%= f.email_field :email, autocomplete: "email", placeholder: '  paracari@example.com' %>
+      </div>
+
+
+      <div class="formSet">
+          <div class="text-left">パスワード</div>
+          <% if @minimum_password_length %>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+        <div class="formSet">
+          <div class="text-left">パスワード（確認用）</div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <%= f.check_box :headhunt,checked:  true,class:"hidden" %>
+
+      <div class="formSet">
+      <%= f.submit "会員登録する",class:"button" %>
+      </div>
+
+
+      <% end %>
+  
+      <p1 class="message">ログイン<a href="/users/sign_in">こちら</a></p1>
+    </form>
+  </div>
+</div>
+</body>

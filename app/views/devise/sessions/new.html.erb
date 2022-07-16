@@ -1,0 +1,44 @@
+
+<body class="devise">
+<div class="login-page mb-5">
+  <div class="formSession  m-auto mt-5">
+  <p class="alert"><%= alert %></p>
+  <h2 class="h1 font-weight-bold">ユーザーログイン</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <form class="login-form  m-auto">
+  <p class="notice"><%= notice %></p>
+    <% if @user.errors.any? %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
+  <% end %>
+
+    <div class="formSet  m-auto">
+      <div class="text-left">メールアドレス</div>
+      <%= f.email_field :email, autofocus: true, placeholder: ' E-mail' %>
+      
+    </div>
+
+    <div class="formSet mt-4">
+      <div class="text-left">パスワード</div>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: ' Password' %>
+
+    </div>  
+    
+    <div class="formSet ">
+      <%= f.submit "ログインする",class:"button" %>
+    </div> 
+
+      <% if devise_mapping.rememberable? %>
+          
+            <p class="checkbutton"><%= f.check_box :remember_me,class:"check" %>ログインを記憶する</p>
+        <% end %>
+
+      <% end %>
+  
+      <p class="message"><a href="/users/sign_up">まだ登録されてない方はこちら</a></p>
+      <p class="message"><a href="/users/password/new">パスワードお忘れの方はこちら</a></p>
+    </form>
+  </div>
+</div>
+</body>

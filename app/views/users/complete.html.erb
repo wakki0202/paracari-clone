@@ -1,0 +1,18 @@
+
+<body class="complete">
+<script type="text/javascript" src="https://js.felmat.net/fmcv.js?adid=A5768O&uqid=TIMESTAMP"></script>
+  <div class="completeArea">
+    <div class="logo">
+    <%= image_tag "logo.jpg",class:"completeLogo" %>
+    </div>
+
+    <div>
+    <h1 class="complete text-center">登録完了しました！</h1>
+    <p class="text-center">この度はパラキャリにご登録いただきまして、誠にありがとうございます。</p>
+    </div>
+
+    <div class="toTop">
+    <%= link_to "< パラキャリを始める", "/users/mypage/#{current_user.id}",class:"button" %>
+    </div>
+  </div>
+</body>

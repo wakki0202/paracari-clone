@@ -1,0 +1,66 @@
+<%= render '/layouts/header' %>
+<div class="PCdesign">
+<div class="introduction-index w-full ">
+  <div class="introductions">
+  <h1>進捗状況確認表</h1>
+  <div class="table-scroll">
+    <table class="table userTable  ">
+    <thead>
+      <tr id="heading" class="border text-left heading">
+      <th id="workNameth" class="border w-25">案件名</th>
+      <th id="" class="border ">口コミ内容</th>
+      <th id="steptd" class="border ">進捗状況</th>
+      
+      <th id="pctd" class="border "></th></tr>
+    </thead>
+      
+      <tbody class="table-striped">
+      <% @introductions.each do |introduction| %> 
+       <% if introduction.user_id == current_user.id %>
+        <tr class="border text-left">
+        <td id="textLimit" class="border w-25"><%= introduction.work.title %></td> 
+        <td id="textLimit"  class="border "><%= introduction.contents %></td>
+        <% if introduction.step == nil %>
+          <td id="steptd" class="border ">口コミ完了</td>
+          <% else %>
+          <td  class="border "><%= introduction.step %></td>
+        <% end %>
+          
+          <td id="pctd" class="morebtn  text-center border"><a href="/progresses/<%= introduction.id %>" class="toShow text-decoration-none">詳細</a></td></tr>
+      
+      <% end %>
+      <% end %>
+  
+      </tbody>    
+      </table>
+      </div>
+
+
+  </div>
+</div>
+</div>
+<div class="SMAHOdesgin">
+<div class="introduction-index w-full ">
+  <div class="introductions">
+  <h1 class="text-center">進捗状況一覧</h1>
+  <p class="text-center">タップで詳細をみることができます</p>
+<% @introductions.each do |introduction| %> 
+  <% if introduction.user_id == current_user.id %>
+    <ul>
+    <li class="border progCard m-auto">
+      <a href="/progresses/<%= introduction.id %>" class="text-decoration-none text-black">
+      <div class="fs-3 fw-bold pb-4">案件名:<%= introduction.work.title %></div>
+      <div class="fs-3 fw-bold pb-5">口コミ内容:<%= introduction.contents %></div>
+      <div><% if introduction.step == nil %>
+          <td id="steptd" class="border "><span>口コミ完了</span></td>
+          <% else %>
+          <td  class="border text-red"><span><%= introduction.step %></span></td>
+        <% end %></div>
+        </a>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
+</div>
+</div>
+</div>

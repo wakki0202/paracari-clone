@@ -1,0 +1,30 @@
+
+<body class="devise">
+<div class="login-page mb-5">
+  <div class="formSession  m-auto mt-5">
+  <h2 class="h1 font-weight-bold">パスワード再設定</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <form class="login-form  m-auto">
+  <p class="notice"><%= notice %></p>
+    <% if @provider.errors.any? %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
+  <% end %>
+
+    <div class="formSet">
+    <div class="text-left">メールアドレス</div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="formSet">
+    <%= f.submit "再設定メールを送信",class:"button" %>
+  </div>
+<% end %>
+  
+      <p class="message"><a href="/providers/sign_up">まだ登録されてない方はこちら</a></p>
+      <p class="message"><a href="/providers/password/new">パスワードお忘れの方はこちら</a></p>
+    </form>
+  </div>
+</div>
+</body>

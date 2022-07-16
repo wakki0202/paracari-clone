@@ -1,0 +1,42 @@
+<body class="post-index">
+
+  <%= render '/layouts/header' %>
+  <div class="post-main">
+        <h1 class="my-5 text-center">案件一覧</h1>
+        <div class="search-form form-inline text-right w-75 m-auto mb-5">
+          <%= search_form_for @q, url: posts_index_path  do |f| %>
+              <%= f.search_field :title_cont,:class => "form-control  fs-4" , :placeholder => "キーワード" %>
+
+              <%= f.submit "検索",class:"btn btn-primary  fs-4" %>
+          <% end %>
+        </div>
+        <div class="post-list-all">
+        <div class="post-list">
+          <% @works.each do |work| %>  
+            <% if work.status == "公開中" %>
+              <section class="card">
+
+                <a  class="link" href="/posts/<%= work.id %>" class=" font-bold">
+                  <h1 class="card-title"><%= work.title %></h1>
+                  <div class="card-content py-4 px-4 text-left">
+                    <p class=" fw-bold text-left">報酬<br><span class="fw-normal "><%= work.reward %></span></p>
+                    
+                    <p class=" fw-bold text-left">地域<br><span class="fw-normal "><%= work.area %></span></p>
+                  </div>
+                </a>
+              
+                <div class="card-link">
+                  <a href="/works/<%= work.id %>/introductions/new" class=" font-bold">お客様を紹介する</a>
+                  <%= link_to "掲載主に詳細を聞く", "/works/#{ work.id }/details/new"  %> 
+                </div>
+
+              </section>
+            <% end %>
+          <% end %>
+     
+      </div>  
+      </div>
+  </div>
+  </div>
+</body>
+

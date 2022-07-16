@@ -1,0 +1,10 @@
+<%= form_with(model: [@work, @work_provider], local: true ) do |form| %>
+  <div class="workTitle">
+  案件名: <%= @work.title %>
+  </div>
+<form>      
+  <%= form.text_field :email,class: 'form' , :autocomplete => "off",:class => "feedback-input" , :placeholder => "追加する管理者のメールアドレス"  %>
+ 
+  <%= form.submit '追加する',data: { confirm: '管理者を追加しますか？' },class: 'submit' %>
+</form>
+<% end %>

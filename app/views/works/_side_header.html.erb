@@ -1,0 +1,23 @@
+ <div class="mainHeader">
+ 
+    <ul class="d-flex">
+    <% if provider_signed_in? %>
+      
+      
+      <li class="toproviderLogout">
+        <span>
+          <% if current_provider.email == "tanachu_78@yahoo.co.jp"   %>
+            <%= link_to '管理者ログアウト' , destroy_provider_session_path, method: :delete,data: { confirm: 'ログアウトしますか？' },class:"text-decoration-none toLogout" %>
+          <% else %>
+            <%= link_to '事業者ログアウト' , destroy_provider_session_path, method: :delete,data: { confirm: 'ログアウトしますか？' },class:"text-decoration-none toLogout" %>
+          <% end %>
+        </span>
+      </li> 
+      <li><%= current_provider.email %></li>
+      <li class=" p-0"><%= image_tag "logo4.jpg",width:"130" %></li>
+      
+    
+    <% end %>
+
+    </ul>
+  </div>

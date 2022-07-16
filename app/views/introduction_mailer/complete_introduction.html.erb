@@ -1,0 +1,16 @@
+<p><%= @current_user.name %>様より口コミが来ました</p>
+
+<p>口コミ内容</p>
+
+<p>■案件名 ：<%= @work.title %></p>
+<p>■お客様名 ：<%= @introduction.name %>様</p>
+<p>■お客様電話番号 ：<%= @introduction.phonenumber %></p>
+
+<p>■案件掲載企業から連絡がいくことを伝えていますか？：
+<% if @introduction.permission == true %>
+伝えています
+<% elsif @introduction.permission == false %>
+伝えていません
+<% end %>
+</p>
+<p>■内容 ：<%= @introduction.contents %></p>

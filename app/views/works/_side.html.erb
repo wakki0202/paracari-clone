@@ -1,0 +1,100 @@
+
+<div class="providersideMain">
+
+        <ul class="side-contents back-toppage">
+          <li class="btn nav-item"><%= link_to "< トップページに戻る","/tops/index",class:"text-decoration-none" %></li>
+        </ul>
+
+        <ul class="side-contents all-cases">
+          <li class="btn nav-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"><%= link_to " 案件一覧","/works",class:"text-decoration-none"  %></span></li>
+        </ul>
+
+        <ul class="side-contents all-cases">
+          <li class="btn nav-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"><a href="/details" class="text-decoration-none"> お問い合わせ一覧 <span class="badge badge-primary badge-pill"><% if current_provider.email == "tanachu_78@yahoo.co.jp" %><%= @detailnumberall %><% else %><%= @detailnumber %><% end %></span></a></span></li>
+        </ul>
+
+
+        <ul class="side-contents all-reviews">
+          <li class="btn nav-item"><span class="glyphicon glyphicon-comment" aria-hidden="true"><a href="/introductions/index" class="text-decoration-none"> 口コミ一覧 <span class="badge badge-primary badge-pill">
+          <% if current_provider.email == "tanachu_78@yahoo.co.jp"   %>
+          <%= @introductionall %>
+          <% elsif %>
+          <%= @introductionnumber %>
+          <% end %></span></a></span></li>
+        </ul>
+
+<% if current_provider.email == "tanachu_78@yahoo.co.jp"   %>
+        <ul class="side-contents all-notices ">
+          <li class="btn nav-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"><a href="/news" class="text-decoration-none"> お知らせ一覧 <span class="badge badge-primary badge-pill"></span></a></span></li>
+        </ul>
+
+        <ul class="side-contents all-user">
+          <li class="btn nav-item"><span class="glyphicon glyphicon-user" aria-hidden="true"><%= link_to " ユーザー一覧","/users/index",class:"text-decoration-none" %></span></li>
+        </ul>
+
+        <ul class="side-contents all-user">
+          <li class="btn nav-item"><span class="glyphicon glyphicon-user" aria-hidden="true"><%= link_to " 事業者一覧","/providers/invitation/new",class:"text-decoration-none" %></span></li>
+        </ul>
+
+<% end %>
+
+
+</div>
+
+<header id="providermobileheader" class="topsite-header">
+
+ <div id="site-header__wrapper">
+        <div class="header-logo">
+          <div class="headerFlex">
+            <div>
+            <a href="/tops/index"><%= image_tag "logo2.jpg",width:"50%",class:"logoImages"  %></a>
+            </div>
+          </div>
+        </div>
+
+          <nav class="nav">
+            <div class="display-none">
+            <div class="hamburger-menu">
+                    <input type="checkbox" id="menu-btn-check">
+                    <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                  <div class="menu-content">
+                          <ul>
+                          <% if current_provider.email == "tanachu_78@yahoo.co.jp" %>
+                          <% else %>
+                          <li class=""><%= link_to "トップページに戻る","/tops/index" %></li>
+                          <% end %>
+                          <li class=""><%= link_to "案件一覧","/works" %></li>
+                          <li><%= link_to " お問い合わせ一覧(#{ @detailnumber }件)","/details",class:"text-decoration-none"  %></li>
+
+                          <li class=""><%= link_to "口コミ一覧(#{ @introductionnumber }件)","/introductions/index" %></button>
+
+                      <% if current_provider.email == "tanachu_78@yahoo.co.jp"   %>
+
+                          <li class=""><%= link_to "お知らせ一覧","/news" %></li>
+
+                          <li class=""><%= link_to "ユーザー一覧","/users/index" %></li>
+
+                          <li><%= link_to " 事業者一覧","/providers/invitation/new",class:"text-decoration-none" %></li>
+
+                      <% end %>
+
+                          <% if provider_signed_in? %>
+                          <li class=""><span><%= link_to '事業者ログアウト' , destroy_provider_session_path, method: :delete,data: { confirm: 'ログアウトしますか？' } %></span></li>
+
+                          <% else %>
+                          <li class=""><span>ログアウト</span></li>
+
+
+      <% end %>
+
+
+
+                          </ul>
+                    </div>
+                </div>
+                </div>
+
+
+            </nav>
+  </div>
+ </header> -->

@@ -1,0 +1,19 @@
+
+<body class="complete">
+<script type="text/javascript" src="https://js.felmat.net/fmcv.js?adid=A5768O&uqid=TIMESTAMP"></script>
+  <div class="completeArea">
+    <div class="logo">
+    <%= image_tag "logo.jpg",class:"completeLogo" %>
+    </div>
+
+    <div>
+    <h1 class="complete text-center">送信完了しました！</h1>
+    <p class="text-center">この度はパラキャリをご利用いただきまして、誠にありがとうございます。</p>
+    <p class="text-center">ご入力いただいた情報は無事に送信されました。</p>
+    </div>
+
+    <div class="toTop">
+    <%= link_to "< マイページに戻る", "/users/mypage/#{ current_user.id }",class:"button" %>
+    </div>
+  </div>
+</body>

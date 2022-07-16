@@ -1,0 +1,39 @@
+
+
+
+
+
+<body class="providerPage">
+  <div class="side">
+    <%= render '/works/side' %>
+  </div>
+ 
+  <div class="main">
+    <div class="mainHeader">
+    <ul>
+    <% if provider_signed_in? %>
+      <li class=""><span><%= link_to '事業者ログアウト' , destroy_provider_session_path, method: :delete,data: { confirm: 'ログアウトしますか？' } %></span></li> 
+      <li><%= current_provider.email %></li>
+      <% else %>
+      <li class=""><span>ログアウト</span></li> 
+      <li>管理者名</li>
+    
+      <% end %>
+
+    </ul>
+    </div>
+    
+        
+    <div class="">
+      <h1>案件を作成する</h1>
+
+      <%= render 'form', work: @work %>
+
+      <div class="toTop">
+      <button><%= link_to '◀トップへ戻る', works_path %></button>
+      </div> 
+    </div>
+
+  </div>
+</body>
+

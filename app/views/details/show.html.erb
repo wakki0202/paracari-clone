@@ -1,0 +1,83 @@
+
+
+
+
+
+<body class="providerPage">
+  <div class="side">
+    <%= render '/works/side' %>
+  </div>
+ 
+  <div class="main">
+    
+  <%= render '/works/side_header' %>
+      
+        
+    <div class="userIndex">
+     
+      <div class="providerTable text-center pb-5">
+      <div class="text-left">
+        <%= link_to '< 一覧に戻る', details_path,class:"text-decoration-none  toShow " %>
+      </div>
+       <h1 class="text-center mb-5">お問い合わせ内容</h1>
+
+      <table class="table w-75 m-auto">
+      
+        
+      <tr class="border font-bold w-75 m-auto">
+        <td class="border border-black  py-3">案件名</td>
+        <td class="border border-black text-center"><%= @detail.work.title %></td>
+      </tr>
+      <tr class="border">
+        <td class="border border-black text-center py-3">お客様名</td>
+        <td class="border border-black"><%= @detail.user.name %>様</td>
+      </tr>
+      <tr class="border">
+        <td class="border border-black text-center py-3">お客様電話番号</td>
+        <td class="border border-black"><%= @detail.user.tel %>様</td>
+      </tr>
+      <tr class="border">
+        <td class="border border-black text-center py-3">お客様アドレス</td>
+        <td class="border border-black"><%= @detail.user.email %></td>
+      </tr>
+      <tr class="border">
+        <td class="border border-black text-center py-3">具体的に気になる部分</td>
+        <td class="border border-black"><%= @detail.content %></td>
+      </tr>
+      <tr class="border">
+        <td class="border border-black text-center py-3">対応チェック</td>
+        <td class="border border-black"><%= @detail.status %></td>
+      </tr>
+      
+    <tr class="border">
+     <td class="border border-black text-center py-3">
+     対応チェック編集</td>
+
+     <td class="border border-black">
+     <%= form_with(model: [@detail], local: true ) do |form| %>
+
+      <div class="field">
+      
+        未対応<%= form.radio_button :status, '未対応' %>
+        対応済み<%= form.radio_button :status, '対応済み' %>
+     
+    </div>
+      <div class="actions">
+        <%= form.submit '更新する',data: { confirm: '更新しますか？' },class: 'submit' %>
+      </div>
+
+  
+      <% end %>
+      </td>
+    </tr>
+      
+    
+
+    </table>
+ 
+
+
+      </div>
+
+  </div>
+</body>

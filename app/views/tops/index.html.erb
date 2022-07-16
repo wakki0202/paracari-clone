@@ -1,0 +1,323 @@
+<!--以下をコピーして使用してください-->
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+
+  <%= render '/layouts/header' %>
+  
+  
+  <section>
+    <div class="top-bg">
+      <div class="title-p">
+      
+        <li class="main-title"><span class="css-br">“あなたの口コミ”</span>が複業になる</li>
+        <%= image_tag "subTitle.png",class:"subtitleImage" %>
+        <li class="sub-title"><span>掲載企業から商品説明をきいてみたいあなたの知人の連絡先を送るだけ！</span></p>
+      </div>  
+      <div class="devices">
+        <a href="/posts/index" class="image1"><%= image_tag "iPhone_1.png", class:"iPhone-bottom" %></a>
+        <a href="/tops/index#movie" class="image2"><%= image_tag "iPhone_2.png", class:"iPhone" %></a>
+        <a href="/users/sign_up" class="image3"><%= image_tag "iPhone_3.png", class:"iPhone-bottom" %></a>
+      </div>
+    </div>
+    
+  </section>
+
+  <section id="movie" class="movie">
+
+    <h1><%= image_tag "serviceImage.jpg",alt:"あなたの口コミが複業になる" ,class:"serviceTitle" %></h1>
+
+    <div class="movie-frame"><%= video_tag("/videos/paracari.mp4", controls: :true, muted: :true,playsinline: :true,autoplay: :true, class: 'video-content',class:"w-100 m-auto" )%></div>
+  </section>
+  <div class="wave-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fceabb" fill-opacity="1" d="M0,256L26.7,245.3C53.3,235,107,213,160,197.3C213.3,181,267,171,320,165.3C373.3,160,427,160,480,186.7C533.3,213,587,267,640,277.3C693.3,288,747,256,800,240C853.3,224,907,224,960,234.7C1013.3,245,1067,267,1120,250.7C1173.3,235,1227,181,1280,149.3C1333.3,117,1387,107,1413,101.3L1440,96L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+    </div>
+
+    <main class="top-page">
+    <div class="subtitle"><%= image_tag "meritImage.jpg",class:"meritTitle" %></div>
+    <section class="merit">
+      <div class="merit-items">
+        <div class="merit-item">
+        <%= image_tag "money02c.png" %>
+        <h3>無料で稼げる</h3>
+        <p>パラキャリでは無料で会員登録ができ、無料で稼いでいただくことができます。プロフィール入力していただくと、無料でスカウトまで受けられます。</p>
+        </div>
+        <div class="merit-item move">
+        <%= image_tag "giveupc.png" %>
+          <h3>面倒な手続き不要</h3>
+          <p>企業に紹介をして紹介料を受け取る場合、業務委託契約を結ぶ必要がありますが、そういった手続き・契約のやりとりは一切不要。
+            好きなタイミングで好きな時に紹介して報酬をゲットできます。</p>
+        </div>
+      
+        <div class="merit-item">
+        <%= image_tag "shakehand02c.png" %>
+          <h3>高報酬の案件が多数</h3>
+          <p>副業月収10万円以上を達成した方100名突破。9割以上が紹介報酬単価3万円以上の案件です。</p>
+        </div>
+        
+        <div class="merit-item move">
+        <%= image_tag "smartphone05.png" %>
+          <h3>スマホで簡単</h3>
+          <p>アフィリエイトをするためのメディア、サイトの登録も不要。必要事項を登録すれば、2分で簡単に始められます。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320" class="wave-content" ><path fill="#fceabb" fill-opacity="1" d="M0,256L80,261.3C160,267,320,277,480,256C640,235,800,181,960,176C1120,171,1280,213,1360,234.7L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    </div>
+
+    <section id="works" class="Items-list">
+    <div class="subtitle child">
+      <div class="mpextend mpLRextendTrigger"><%= image_tag "worksImage.jpg",class:"worksTitle" %></div>
+    </div>
+    <div class="slide">
+      <div class="Item">
+          <div class="Item-top">
+            <i class="fas fa-hand-holding-heart"></i>
+            <p class="Item-title">転職先企業紹介<br>＆転職サポート</p><div class="border"></div>
+          </div>
+          <div class="Item-bottom">
+            <p class="Item-reward">報酬：紹介料の20%</p>
+            <p class="Item-content">転職もしくは就職をしたい方をご紹介ください。現在フリーター・無職の方でもOKです。</p>
+          </div>
+      </div>
+      <div class="Item">
+          <div class="Item-top">
+            <i class="fas fa-coins"></i>
+            <p class="Item-title">補助金・助成金の<br>申請サポート</p><div class="border"></div>
+          </div>
+          <div class="Item-bottom">
+            <p class="Item-reward">報酬：申請サポート手数料の20%</p>
+            <p class="Item-content">補助金・助成金の申請のサポートをさせていただける方を紹介してください。</p>
+          </div>
+      </div>
+      <div class="Item">
+          <div class="Item-top">
+            <i class="fas fa-building"></i>
+            <p class="Item-title">賃貸物件紹介</p><div class="border"></div>
+          </div>
+          <div class="Item-bottom">
+            <p class="Item-reward">報酬：家賃の50%</p>
+            <p class="Item-content">引越しする方をご紹介ください。 ネットに載ってる物件や未公開物件を安くご案内します。</p>
+          </div>
+      </div>
+      <div class="Item">
+          <div class="Item-top">
+            <i class="far fa-file-alt"></i>
+            <p class="Item-title">火災保険申請サポート</p><div class="border"></div>
+          </div>
+          <div class="Item-bottom">
+            <p class="Item-reward">報酬：約10万円/件</p>
+            <p class="Item-content">プロによる物件の無料調査を受けたいお客様をご紹介ください。</p>
+          </div>
+      </div>
+      <div class="Item">
+          <div class="Item-top">
+            <i class="fas fa-tshirt"></i>
+            <p class="Item-title">ハイブランド品の購入者紹介</p><div class="border"></div>
+          </div>
+          <div class="Item-bottom">
+            <p class="Item-reward">報酬：約10%/件</p>
+            <p class="Item-content">新品正規品のハイブランドの服を定価の最大99％オフで買いたい方をご紹介ください</p>
+          </div>
+      </div>
+      <div class="Item">
+          <div class="Item-top">
+            <i class="fas fa-shield-alt"></i>
+            <p class="Item-title">不評被害のサポート</p><div class="border"></div>
+          </div>
+          <div class="Item-bottom">
+            <p class="Item-reward">報酬：成約金額の5%</p>
+            <p class="Item-content">不評被害を受けている、または可能性のある企業・個人をご紹介ください。対策メニューの販売をさせていただきます。</p>
+          </div>
+      </div>
+    <!--/slider--></div>
+    
+    <div class="SeeMore">
+      <%= link_to "案件をもっとみる", "/posts/index" , class: "btn-home" %></div>
+    </div>
+    </section>
+    
+    <div class="wave-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fceabb" fill-opacity="1" d="M0,256L26.7,245.3C53.3,235,107,213,160,197.3C213.3,181,267,171,320,165.3C373.3,160,427,160,480,186.7C533.3,213,587,267,640,277.3C693.3,288,747,256,800,240C853.3,224,907,224,960,234.7C1013.3,245,1067,267,1120,250.7C1173.3,235,1227,181,1280,149.3C1333.3,117,1387,107,1413,101.3L1440,96L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+    </div>
+    
+
+    <section id="rewardFlow" class="reward parent">
+      <div class="subtitle child"><%= image_tag "flowImage.jpg",class:"flowTitle" %></div>
+      <div class="flex">
+      <div class="stepOne">
+        <p><span>step1</span></p>
+        <h4>案件を確認する</h4>
+        <div class="blackback">
+          <%= image_tag "stepone.jpg",class:"stepImage" %>
+        </div>
+        <p class="stepFooter">友人に紹介したい案件を見つけたら...</p>
+      </div>
+
+      <div class="arrow"></div>
+
+      <div class="stepOne">
+      <p><span>step2</span></p>
+      <h4>知人に案件を紹介する</h4>
+      <div class="blackback">
+      <%= image_tag "stepfour.jpg",class:"stepImage" %>
+      </div>
+        <p class="stepFooter">知人に案件の掲載会社から連絡が入ることを伝えたら...</p>
+      </div>
+
+      <div class="arrow">
+    </div>
+
+    <div class="stepOne">
+      <p><span>step3</span></p>
+      <h4>知人の連絡先を入力する</h4>
+      <div class="blackback">
+      <%= image_tag "stepthree.jpg",class:"stepImage" %>
+      </div>
+        <p class="stepFooter">口コミした案件の契約が成功すれば...</p>
+      </div>
+
+      <div class="arrow">
+    </div>
+
+      <div class="stepOne">
+      <p><span>step4</span></p>
+      <h4>報酬発生！</h4>
+      <div class="blackback">
+      <%= image_tag "stepsecond.jpg",class:"stepImage" %>
+      </div>
+        <p class="stepFooter"><a href="/posts/index" class="toWorks">案件一覧を見る＞</a></p>
+      </div>
+
+      </div>
+        <div class="reward-start">
+          <%= link_to "無料ではじめる" ,"/users/sign_up",class: "btn-home" %></div>
+        </div>
+    </section>
+ 
+
+    <div class="wave">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320" class="wave-content" ><path fill="#f5f5f5" fill-opacity="1" d="M0,256L80,261.3C160,267,320,277,480,256C640,235,800,181,960,176C1120,171,1280,213,1360,234.7L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    </div>
+    <section class="Voices">
+    <%= javascript_pack_tag 'home/fadein' %>
+      
+
+      <div class="parent">
+        <div class="subtitle">
+        <%= image_tag "voiceImage.jpg",class:"voiceTitle"%>
+        </div>
+      </div>
+
+        <div class="flexVoice">
+          <div class="Voice slide-bottom show">
+            <div class="">
+              <%= image_tag "22981604_s.jpg",class:"VoiceImage" %>
+            </div>
+            <div class="VoiceFooter">
+              <p class="Voice-title"><span class="under-line">30万円GET</span></p>
+              <p class="comment">コロナでパートの収入が減って外出もできない中で不安な毎日でしたが、パラキャリで副業することで金銭的な余裕が生まれました。今ではパートを卒業して、パラキャリだけで自宅にいながら収入を得ることができるので、子供との時間を今まで以上にとることができて心にも余裕が生まれました。</p>
+              <p class="feature">41歳 女性</p>
+            </div>
+          </div>
+
+          <div class="Voice slide-bottom show">
+            <div class="">
+            <%= image_tag "manpic3.jpg",class:"VoiceImage" %>
+            </div>
+            <div class="VoiceFooter">
+              <p class="Voice-title"><span class="under-line">20万円GET</span></p>
+              <p class="comment">セカンドライフを見据えてもう少し収入を増やしたいと思ってましたが、特別な技術もパソコンスキルもなく副業は難しいと思っておりました。ただパラキャリはそんな私でも凄く簡単に使えました。困っている知人を紹介するだけで感謝もされるし収入もしっかりと稼げるので遣り甲斐を感じております。</p>
+              <p class="feature">55歳 男性</p>
+            </div>
+          </div>
+
+          <div class="Voice slide-bottom show">
+            <div class="">
+            <%= image_tag "manpic.jpg",class:"VoiceImage" %>
+            </div>
+            <div class="VoiceFooter">
+              <p class="Voice-title"><span class="under-line">15万円GET</span></p>
+              <p class="comment">同僚に教えてもらってパラキャリに登録しました。この不安定な世の中、会社の収入だけに頼るのはリスクだと思い、今までに様々な副業に挑戦しました。ただ会社の仕事はかなりハードで、ヘトヘトで家に帰ってから副業をするのはとても大変で結局今まで１円も稼ぐことができませんでした。しかしこのサイトはお客様への説明などの手間のかかることは不要で、見込み顧客を紹介するだけであとは全て掲載主の方が行ってくれるので、忙しい私でも初月から１０万円以上稼ぐことができました。</p>
+              <p class="feature">32歳 男性</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <div class="wave-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f5f5f5" fill-opacity="1" d="M0,256L26.7,245.3C53.3,235,107,213,160,197.3C213.3,181,267,171,320,165.3C373.3,160,427,160,480,186.7C533.3,213,587,267,640,277.3C693.3,288,747,256,800,240C853.3,224,907,224,960,234.7C1013.3,245,1067,267,1120,250.7C1173.3,235,1227,181,1280,149.3C1333.3,117,1387,107,1413,101.3L1440,96L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+    </div>
+
+      <section id="FAQ" class="FAQ">
+      <div class="parent"><div class="subtitle child"><%= image_tag "faqImage.jpg",class:"faqTitle" %></div></div>
+      <div class="FAQ-items">
+        
+        <div class="FAQ-item">
+          <label for="Q1" class="Q-title">
+            <div>Q.自分で案件のサービスを利用しても報酬は発生しますか？</div>
+            <div><i class="fas fa-plus"></i></div>
+          </label>
+          <input type="checkbox" id="Q1">
+          <ul class="A A1">
+            <li class="FAQList">A.ご自身で案件のサービスをご利用していただいても報酬は発生いたします。そのため、まずはご自身で使えるサービスは使ってみて、良さを体験していただいてからお知り合いの方にご紹介していただくこともオススメしております。</li>
+          </ul>
+        </div>
+        
+        <div class="FAQ-item">
+          <label for="Q2" class="Q-title">
+            <div>Q.匿名でも使えますか？</div>
+            <div><i class="fas fa-plus"></i></div>
+          </label>
+          <input type="checkbox" id="Q2">
+          <ul class="A A2">
+            <li class="FAQList">A.匿名でのご利用はご遠慮いただいています。</li>
+          </ul>
+        </div>
+        
+        <div class="FAQ-item">
+          <label for="Q3" class="Q-title">
+            <div>Q.未成年は使えますか？</div>
+            <i class="fas fa-plus"></i>
+          </label>
+          <input type="checkbox" id="Q3">
+          <ul class="A A3">
+            <li class="FAQList">A.未成年のご利用はご遠慮いただいています。</li>
+          </ul>
+        </div>
+
+        <div class="FAQ-item">
+          <label for="Q4" class="Q-title">
+            <div>Q.支払いの時に間に誰か入ってくれますか？</div>
+            <i class="fas fa-plus"></i>
+          </label>
+          <input type="checkbox" id="Q4">
+          <ul class="A A4">
+            <li class="FAQList">A.報酬はパラキャリから支払われます。クライアント（掲載主）から口座に振り込まれることや、それによる金銭的トラブル等のリスクはございませんのでご安心ください。</li>
+          </ul>
+        </div>
+    
+        <div class="FAQ-item">
+          <label for="Q5" class="Q-title">
+            <div>Q.過去の報酬の支払い実績はありますか？どれくらい稼げますか？</div>
+            <i class="fas fa-plus"></i>
+          </label>
+          <input type="checkbox" id="Q5">
+          <ul class="A A5">
+            <li class="FAQList">A.累計これまでに１００人以上の方にお支払いしています。中には月収で１００万円以上を達成された方も多くいらっしゃいます。</li>
+          </ul>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <%= render '/layouts/footer' %>
+    <script src="https://kit.fontawesome.com/a5c533f20f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+    
+    </script>
+</body>

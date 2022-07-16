@@ -1,0 +1,112 @@
+
+<body class="userMypage">
+<%= render '/layouts/header' %>
+    
+    <div class="sidebar_main ">
+      <aside class="sidebar">
+        <div id="leftside-navigation" class="nano">
+          <ul class="nano-content">
+            <li class="user">
+              <li> <a href="/tops/index"><span>トップページへ</span></a> </li>
+              <li><a href="/users/edit">プロフィール編集</a> </li>
+              <li><a href="/posts/index">案件一覧</a> </li>
+              <li><a href="/">ログアウト</a> </li>
+              <li><%= link_to "退会ご希望の方はこちら" ,"/users/destroy/#{current_user.id}" %> </li>
+          </ul>
+          </li>
+          </li>
+          </ul>
+          </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <div class="post-main">
+         
+        
+      <div class="post-list-all">
+        <div class="post-list">
+
+          <section class="card pt-3">
+          <a href="/users/edit" class=" font-bold">
+          <div class="text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="1.5" stroke="#000" fill="none" class="duration-300 transform transition-all" style="width: 48px; height: 48px;"><circle cx="32" cy="18.14" r="11.14"></circle><path d="M54.55 56.85A22.55 22.55 0 0032 34.3h0A22.55 22.55 0 009.45 56.85z"></path></svg>
+          </div>
+            
+            
+              <h3 class="card-title border-bottom pb-4 fs-3 ">個人情報設定</h3>
+              <div class="card-content">
+                <p class="card-text p-3">プロフィールの編集・<span class="scoutred">スカウトの設定</span>はこちら！</p>
+              </div>
+            </a>
+          </section>
+
+
+
+          <section class="card pt-3">
+            <a href="/progresses/index" class=" font-bold">
+            <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="1.5" stroke="#000" fill="none" class="duration-300 transform transition-all" style="width: 48px; height: 48px;"><path d="M8.07 45.3L24.8 29.23l10.51 10.26 20.12-20.04"></path><path d="M44.99 19.12l10.44.28-.29 10.44"></path></svg>
+            </div>
+              <h1 class="card-title border-bottom pb-4 fs-3">進捗状況</h1>
+              <div class="card-content">
+                <p class="card-text p-3">口コミ後の進捗状況を確認してみよう！</p>
+              </div>
+            </a>
+           
+          </section>
+
+
+          <section class="card pt-3">
+            <a href="/tops/news" class=" font-bold">
+            <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="1.5" stroke="#000" fill="none" class="duration-300 transform transition-all" style="width: 48px; height: 48px;"><path d="M12 51.76V46.7s5.05-.25 5.05-5.06v-16S17 12.37 31.33 12.37C44 12.37 47 19.75 47 25.16v17.38s-.37 4.2 5 4.2v5z"></path><path d="M35.91 12.75v-1.38a3.91 3.91 0 10-7.82 0v1.26M36 51.76a4.78 4.78 0 11-9.56 0"></path></svg>
+            </div>
+              <h1 class="card-title border-bottom pb-4 fs-3">お知らせ</h1>
+              <div class="card-content">
+                <p class="card-text p-3">パラキャリからのお知らせを見てみよう！</p>
+              </div>
+            </a>
+           
+          </section>
+          <section class="card pt-3">
+            <a href="/posts/index" class=" font-bold">
+            <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="1.5" stroke="#000" fill="none" class="duration-300 transform transition-all" style="width: 48px; height: 48px;"><path d="M33.85 55.28H12.44V19.61L24.39 6.75h25.66v31.67"></path><path d="M24.41 6.75l-.02 12.86H12.44M17.59 46.68H29.6M17.59 40.15H31.6M17.59 34.05H39.6M17.59 27.95H44.6"></path><circle cx="41.76" cy="47.06" r="7.66"></circle><path d="M46.96 52.69l5.77 6.26"></path></svg>
+            </div>
+              <h1 class="card-title border-bottom pb-4 fs-3">案件一覧</h1>
+              <div class="card-content">
+                <p class="card-text p-3">豊富な案件を見て口コミをしてみよう！</p>
+              </div>
+            </a>
+           
+          </section>
+          <section class="card pt-3">
+            <a href="/users/invitation/new" class=" font-bold">
+            <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="1.5" stroke="#000" fill="none" class="duration-300 transform transition-all" style="width: 48px; height: 48px;"><circle cx="22.83" cy="22.57" r="7.51"></circle><path d="M38 49.94a15.2 15.2 0 00-15.21-15.2h0a15.2 15.2 0 00-15.2 15.2z"></path><circle cx="44.13" cy="27.22" r="6.05"></circle><path d="M42.4 49.94h14A12.24 12.24 0 0044.13 37.7h0a12.21 12.21 0 00-5.75 1.43"></path></svg>
+            </div>
+              <h1 class="card-title border-bottom pb-4 fs-3">友人を招待する</h1>
+              <div class="card-content">
+                <p class="card-text p-3">友人をパラキャリに招待しよう！</p>
+              </div>
+            </a>
+           
+          </section>
+          <section class="card pt-3">
+            <a href="https://page.line.me/892qodsr?openQrModal=true" class=" font-bold">
+            <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="1.5" stroke="#000" fill="none" class="duration-300 transform transition-all" style="width: 48px; height: 48px;"><path d="M56.58 28.81c0 10.72-11 19.41-24.58 19.41a29.53 29.53 0 01-3.67-.22c-2.08-.24-7.92 7.19-9.79 6.56-1.51-.51.9-9-.43-9.73-6.46-3.5-10.69-9.37-10.69-16 0-10.72 11-19.4 24.58-19.4s24.58 8.66 24.58 19.38zM23.38 28.55h.5M32 28.55h.5M40.36 28.55h.5" stroke-linecap="round"></path></svg>
+            </div>
+              <h1 class="card-title border-bottom pb-4 fs-3">LINEお問い合わせ</h1>
+              <div class="card-content">
+                <p class="card-text p-3">気になることがある方はこちら！</p>
+              </div>
+            </a>
+           
+          </section>
+        </div>
+      </div>
+  
+</body>
+

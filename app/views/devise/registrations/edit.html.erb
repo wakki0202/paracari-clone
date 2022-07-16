@@ -1,0 +1,107 @@
+<body class="userEdit">
+ <%= render '/layouts/header' %>
+<div class="editWrap">
+
+      <%= render '/users/editside' %>
+
+      <div class="mainEdit">
+        <div class="edit-page fs-4">
+              <div class="formEdit">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <p class="alert"><%= alert %></p>
+             
+             <h1 id="bankEdit ">プロフィール・スカウト設定</h1>
+             <% if @user.errors.any? %>
+              <div id="error_explanation">
+                <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+                  <div class="formSetEdit mt-5">
+                    <div class="text-left">お名前 <span>（必須）</span></div>
+                    <%= f.text_field :name, placeholder: '  原　キャリー',value:  current_user.name %>
+                  </div>
+
+                  <div class="formSetEdit">
+                      <div class="text-left">電話番号 <span>（必須）</span></div>
+                      <%= f.text_field :tel, placeholder: '  09012345678',value:  current_user.tel %>
+                  </div>
+
+                <div class="formSetEdit">
+                  <div class="text-left">Eメール <span>（必須）</span></div>
+                  <%= f.email_field :email, autocomplete: "email",value:  current_user.email %>
+                </div>
+
+                <div class="formSetEdit">
+                  <div class="text-left">LINE ID（任意）</div>
+                  <%= f.text_field :line_id, autocomplete: "email",value:  current_user.line_id %>
+                </div>
+
+                <div class="formSetEdit ">
+                  <div class="text-left">生年月日（任意）</div>
+                  <div id="flex">
+                  <%= f.date_select :birth_date, autocomplete: "email", use_month_numbers: true,start_year: 1900, end_year: (Time.now.year - 1), default: Date.new(1900, 1, 1),selected:  current_user.birth_date %>
+                  </div>
+                </div>
+
+                
+
+                <div class="formSetEdit">
+                          <div class="text-left">居住地 （任意）</div>
+                          <%= f.select :residence, [ [],["その他","その他"],["海外在住","海外在住"],["北海道","北海道"], ["青森県","青森県"], ["岩手県","岩手県"],["宮城県","宮城県"], ["秋田県","秋田県"], ["山形県","山形県"],["福島県","福島県"], ["茨城県","茨城県"], ["栃木県","栃木県"],[ "群馬県","群馬県"], [ "埼玉県","埼玉県"], [ "千葉県" "千葉県"],[ "東京都","東京都"], [ "神奈川県","神奈川県"], [ "新潟県","新潟県"],[ "富山県","富山県"], [ "石川県","石川県"], [ "福井県","福井県"],[ "山梨県","山梨県"], [ "長野県","長野県"], [ "岐阜県","岐阜県"],[ "静岡県","静岡県"], [ "愛知県","愛知県"], [ "三重県","三重県"],[ "滋賀県","滋賀県"], [ "京都府","京都府"], [ "大阪府","大阪府"],[ "兵庫県","兵庫県"], [ "奈良県","奈良県"], [ "和歌山県","和歌山県"],[ "鳥取県","鳥取県"], [ "島根県","島根県"], [ "岡山県","岡山県"],[ "広島県","広島県"], [ "山口県","山口県"], [ "徳島県","徳島県"],[ "香川県","香川県"], [ "愛媛県","愛媛県"], [ "高知県","高知県"],[ "福岡県","福岡県"], [ "佐賀県","佐賀県"], [ "長崎県","長崎県"],[ "熊本県","熊本県"], [ "大分県","大分県"], [ "宮崎県","宮崎県"],[ "鹿児島県","鹿児島県"], [ "沖縄県","沖縄県"]],selected: current_user.residence ,class:"fs-4" %>
+                </div>
+
+                <div class="formSetEdit">
+                  <div class="text-left">経歴（任意）</div>
+                  <%= f.text_area :career, autocomplete: "email",size: "40x10",value:  current_user.career %>
+                </div>
+
+                <div class="formSetEdit">
+                  <div class="text-left">自己PR（任意）</div>
+                  <%= f.text_area :appeal, autocomplete: "email",size: "40x10",value:  current_user.appeal %>
+                </div>
+
+                <div class=" text-center">掲載主からのスカウトを許可しますか？<%= f.check_box :headhunt,:as => :boolean ,checked:  current_user.headhunt %></div>
+
+                <div class="formSetEdit">
+                    <%= f.submit "情報を更新する",class:"button",data: { confirm: '更新しますか？' } %>
+                </div>
+              <div id="bankArea">
+               <h1 id="bankEdit " class="pt-5 border-top">報酬口座設定</h1>
+
+               <div class="formSetEdit mt-5">
+                          <div class="text-left">銀行 <span>（必須）</span></div>
+                          <%= f.text_field :bank,value:  current_user.bank  %>
+                        </div>
+
+                        <div class="formSetEdit">
+                          
+                          <div class="text-left">口座種別 <span>（必須）</span></div>
+                          <%= f.select :account_type, [ [],["普通","普通"], ["当座","当座"] ],selected: current_user.account_type,class:"fs-4" %>
+                        </div>
+
+                        <div class="formSetEdit">
+                          <div class="text-left">支店コード <span>（必須）</span></div>
+                          <%= f.text_field :branch,value: current_user.branch %>
+                        </div>
+
+                        <div class="formSetEdit">
+                          <div class="text-left">口座番号 <span>（必須）</span></div>
+                          <%= f.text_field :account_no,value: current_user.account_no %>
+                        </div>
+
+                      
+                        <div class="formSetEdit">
+                          <%= f.submit "情報を更新する",class:"button",data: { confirm: '更新しますか？' } %>
+                        </div>
+                      </div>
+              <% end %>
+              </div>
+              </div>
+      </div>
+</div>
+</body>

@@ -1,0 +1,29 @@
+
+<body class="introduction-new">
+<%= render '/layouts/header' %>
+  <div class="sign-up-main ">
+ <p class="fs-2"><%= alert %></p>
+  <% if @introduction.errors.any? %>
+  <div id="introductionerror" class="alert">
+    <ul>
+      <% @introduction.errors.full_messages.each do |message| %>
+        <li class="text-center text-white fw-bold fs-4 pb-3">※<%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_with(model: [@work, @introduction], local: true ) do |form| %>
+  <div class="workTitle">
+  案件名: <%= @work.title %>
+  </div>
+<form>      
+  <%= form.text_field :name,class: 'form' , :autocomplete => "off",:class => "feedback-input" , :placeholder => "紹介するお客様名（必須）"  %>
+  <%= form.text_field :phonenumber,class: 'form'  , :autocomplete => "off",:class => "feedback-input" ,:placeholder => "紹介するお客様電話番号（必須）" %>
+  <%= form.text_area :contents,class: 'form' , :autocomplete => "off",:class => "feedback-input" ,:placeholder => "口コミ内容（任意）" %>
+  <div class="checkIntro text-center">案件掲載企業から連絡がいくことを伝えていますか？<%= form.check_box :permission,:as => :boolean, checked:false %></div>
+ 
+  <%= form.submit '口コミする',data: { confirm: '口コミを送信しますか？' },class: 'submit' %>
+</form>
+<% end %>
+</body>
+  

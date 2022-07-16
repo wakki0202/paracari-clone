@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+#@import "font-awesome";
+ *= require_tree .
+ *= require_self
+ */
+@import "slick-theme";
+@import "slick";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+html {
+  // font-family: "Noto Sans JP", "YuGothic", "Yu Gothic",
+  //   "Hiragino Kaku Gothic ProN", "游ゴシック", "游ゴシック体",
+  //   "ヒラギノ角ゴ ProN W3", "メイリオ", "Meiryo", "ＭＳ ゴシック", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック体",
+    "Yu Gothic", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+}
+
+body {
+  padding: 0;
+}
+
+
+.carousel {
+  padding-top: 100px;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.img {
+  width: 100vw;
+  height: 60vh;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.btns button {
+  margin: 0px 4px;
+}
+
+.pagination{
+  justify-content: center;
+}
+
+.pagination > li > a {
+  /*枠線をなくす*/
+  color: #696969; /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination > .active > a {
+  background: #ff933a; /*背景の色を変える*/
+  /*角を丸くする*/
+}
+
+.pagination > .active > a:hover {
+  background: #cc752f; /*背景の色を変える*/
+  /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination > li > a:hover {
+  background: #ff933a;
+  color: white; /*角を丸くする*/
+}
+
+img.sized {
+  width: 80%;
+  height: 80%;
+}
+
+#terms{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック体",
+    "Yu Gothic", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+
+    li{
+      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック体",
+    "Yu Gothic", YuGothic, "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+    }
+}
+

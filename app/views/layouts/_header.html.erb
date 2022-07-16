@@ -1,0 +1,75 @@
+
+<header class="topsite-header">
+ <div id="site-header__wrapper">
+        <div class="header-logo">
+          <div class="headerFlex">
+            <div>
+            <a href="/tops/index"><%= image_tag "logo2.jpg",class:"logoImages"  %></a>
+            </div>
+          </div>
+        </div>
+
+          <nav class="nav">
+            <div class="display-none">
+                <div class="hamburger-menu">
+                        <input type="checkbox" id="menu-btn-check">
+                        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                      <div class="menu-content">
+                              <ul>
+                              <% if user_signed_in?  %>
+                              
+                              <% else %>
+                              <li class="nav__item"><%= link_to "案件一覧" ,"/posts/index" %></li>
+                              <% end %>                             
+                          <% if provider_signed_in?  %>
+                              <li class="nav__item"><%= link_to "事業者ページ" ,"/works" %></li>
+                          <% elsif user_signed_in?  %>
+                                    
+                              <li class="nav__item"><%= link_to "マイページ" ,"/users/mypage/#{current_user.id}" %></li>
+                              
+                            <% else %>
+                              <li class="nav__item"><%= link_to "ログイン" ,"/users/sign_in" %></li>
+                              <li class="nav__item"><%= link_to "会員登録" ,"/users/sign_up" %></li>
+                            <% end %>
+                            <% if user_signed_in?  %>
+                              
+                              <% else %>
+                              <li class="nav__item"><%= link_to "LINEでお問い合わせ" ,"https://page.line.me/892qodsr?openQrModal=true" %></li>
+                              <% end %>  
+                              
+                              <% if user_signed_in?  %>
+                              <li class="nav__item"><%= link_to 'ログアウト' , destroy_user_session_path, method: :delete %></li>
+                              <li class="nav__item"><%= link_to "退会ご希望の方はこちら" ,"/users/destroy/#{current_user.id}" %> </li>
+                              <% end %>
+                              </ul>
+                      </div>
+                </div>
+              </div>
+                  <div class="nav__wrapper">
+                    <% if user_signed_in? || provider_signed_in? %>
+                    <% else %>
+                        <li class="nav__item h-list "><%= link_to "案件一覧" ,"/posts/index" %></li>
+                         <li class="nav__item h-list "><%= link_to "よくあるご質問" ,"/tops/index#FAQ" %></li>
+                        <li class="nav__item h-contact"><%= link_to "LINEでお問い合わせ" ,"https://page.line.me/892qodsr?openQrModal=true" %></li>
+                    <% end %>
+                      <% if provider_signed_in?  %>
+                        <li class="nav__item h-mypage"><%= link_to "事業者ページ" ,"/works" %></li>
+                      <% elsif user_signed_in?  %>
+                          
+                          <li class="nav__item h-mypage"><%= link_to "マイページ" ,"/users/mypage/#{current_user.id}" %></li>
+                          <li class="nav__item h-mypage"><%= link_to 'ログアウト' , destroy_user_session_path, method: :delete %></li>
+                      </div>
+
+                                    
+                        
+                      <% else %>
+                        <li class="nav__item h-log"><%= link_to "ログイン" ,"/users/sign_in" %></li>
+                        <li class="nav__item h-reg"><%= link_to "会員登録" ,"/users/sign_up" %></li>
+                      <% end %>
+                  </div>
+          </nav>
+  </div>
+ </header> 
+
+
+ 

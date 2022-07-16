@@ -1,0 +1,47 @@
+
+
+    <footer id="footer">
+  <section class="primary">
+    <div class="flex">
+      <div class="left"><%= image_tag "logo3.jpg",class:"footerlogo"  %>
+        
+  
+      </div>
+      <div class="right">
+        <div class="navi-section">
+          <p class="parent"><a href="#works">案件情報</a></p>
+          <ul class="navi">
+            <p class="parent"><a href="/posts/index">案件一覧</a></p>
+            <p class="parent"><a href="#rewardFlow">報酬獲得の流れ</a></p>
+          </ul>
+        </div>
+        <% if user_signed_in?  %>
+        <div class="navi-section">
+          <p class="parent"><%= link_to "マイページ" ,"/users/mypage/#{current_user.id}" %></p>
+          
+          <ul class="navi">
+            <p class="parent"><a href="/progresses/index">進捗状況確認</a></p>
+            <p class="parent"><a href="/users/edit">個人情報詳細設定</a></p>
+            <p class="parent"><%= link_to "退会ご希望の方はこちら" ,"/users/destroy/#{current_user.id}" %></p>
+          </ul>
+        </div>
+        <% end %>
+        <div class="navi-section">
+        <% if user_signed_in?  %>
+          <p class="parent"><a href="/progresses/index">お知らせ一覧</a></p>
+        <% end %>
+          <p class="parent"><a href="#FAQ">よくある質問</a></p>
+          <p class="parent"><a href="/users/invitation/new">友人を招待する</a></p>
+          <p class="parent"><a href="https://page.line.me/892qodsr?openQrModal=true">LINEでお問い合わせ</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="secondary">
+    <ul class="sitenavi">
+      <li><a href="/tops/terms">利用規約</a></li>
+      <li><a href="/tops/policy">プライバシーポリシー</a></li>
+    </ul>
+    <p class="copyright">Copyright © パラレルキャリア All Rights Reserved</p>
+  </section>
+</footer>

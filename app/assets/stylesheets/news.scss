@@ -1,0 +1,57 @@
+// Place all the styles related to the News controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+textarea .form-control{
+  font-size: 14px;
+}
+
+@media (min-width: 710px) {
+
+.newsWrap{
+  margin-top: 100px;
+}
+
+.newsIndex{
+  font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+
+  .newsList{
+    width: 50%;
+    margin: 0 auto;
+
+    li:hover{
+      background-color: rgba(0,0,0,0.1);
+    }
+  
+
+  a{
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+}
+}
+
+}
+
+@media (max-width: 709px) {
+  .newsWrap{
+  margin-top: 150px;
+}
+
+
+  .newsIndex{
+  font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+
+  .newsList{
+    width: 75%;
+    margin: 0 auto;
+     li:hover{
+      background-color: rgba(0,0,0,0.1);
+    }
+  
+
+  a{
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+}
+}
+
+}

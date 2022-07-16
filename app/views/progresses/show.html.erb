@@ -1,0 +1,110 @@
+
+<%= render '/layouts/header' %>
+
+<div class="progressbar">
+<div class="container-fluid">
+  <br /><br />
+  <ul class="list-unstyled multi-steps">
+  
+  <% if @introduction.step == nil %>
+    <li class="is-active">口コミ送信完了</li>
+    <% else %>
+    <li>口コミ送信完了</li>
+  <% end %>
+
+  <% if @introduction.step == "口コミ確認完了"%>
+    <li class="is-active">口コミ確認完了</li>
+  <% else %>
+    <li>口コミ確認完了</li>
+  <% end %>
+
+  <% if @introduction.step == "検討中" %>
+    <li class="is-active">検討中</li>
+    <% else %> 
+    <li>検討中</li>
+    <% end %>
+  
+  <% if @introduction.step == "断られました" %>
+    <li class="is-active">断られました</li>
+  <% elsif @introduction.step == "お客様と繋がりませんでした" %>
+    <li class="is-active">お客様と繋がりませんでした</li>
+  <% elsif @introduction.step == "キャンセル" %>
+    <li class="is-active">キャンセル</li>
+  <% else %>
+  <% end %>
+  
+
+  <% if @introduction.step == "進行中" %>  
+    <li class="is-active">進行中</li>
+    <% else %>
+    <li>進行中</li>
+    <% end %>
+
+  <% if @introduction.step == "契約成立"%>
+    <li class="is-active">契約成立</li>
+    <% else %>
+    <li>契約成立</li>
+    <% end %>
+
+  <% if @introduction.step == "報酬振込完了"%>
+    <li class="is-active">報酬振込完了</li>
+    <% else %>
+    <li>報酬振込完了</li>
+    <% end %>
+
+    
+
+  </ul>
+</div>
+</div>
+<div id="introduction-show" class="w-75 m-auto">
+
+ 
+
+   <div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 border-bottom border-danger fw-bold fs-2">口コミ日時</h3>
+      <p class="fs-4"><%= l @introduction.created_at %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 border-bottom border-danger fw-bold fs-2">案件名</h3>
+      <p class="fs-4"><%= @introduction.work.title %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 border-bottom border-danger fw-bold fs-2">お客様名</h3>
+      <p class="fs-4"><%= @introduction.name %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 border-bottom border-danger fw-bold fs-2 ">お客様電話番号</h3>
+      <p class="fs-4"><%= @introduction.phonenumber %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 border-bottom border-danger fw-bold fs-2">口コミ内容</h3>
+      <p class="fs-4"><%= @introduction.contents %></p>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 border-bottom border-danger fw-bold fs-2">進捗状況</h3>
+      <% if @introduction.step == nil %>
+        <p class="fs-4">口コミ送信完了</p>
+        <% else %>
+        <p class="fs-4"><%= @introduction.step %></p>
+        <% end %>
+    </div>
+    <div class="mb-5">
+      <h3 class="pb-3 mb-3 border-bottom border-danger fw-bold fs-2">掲載主からのコメント</h3>
+      <p class="fs-4"><%= @introduction.comment %></p>
+    </div>
+
+</div>
+  
+    
+</div>
+
+
+
+
+
+
+
+
+

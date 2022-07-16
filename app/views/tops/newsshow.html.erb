@@ -1,0 +1,17 @@
+<%= render "/layouts/header" %>
+<div class="newsWrap">
+<div class="w-75 m-auto">
+          <p class="border-bottom pb-3 text-left fw-bold fs-2">
+            <%= @news.title %>
+          </p>
+
+          <p>
+           <%= l @news.created_at %>
+          </p>
+          <p class="fs-3">
+            <%= auto_link(simple_format(@news.content), html: {target: '_blank'}) %>
+          </p>
+          </div>
+
+          <div class="text-center mt-5"><a href="/tops/news" class="text-decoration-none text-black fs-4">お知らせ一覧へ＞</a></div>
+</div>

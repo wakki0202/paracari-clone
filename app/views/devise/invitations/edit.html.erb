@@ -1,0 +1,53 @@
+<body class="devise">
+<div class="login-page">
+  <div class="formRegistration">
+
+<h2 class="text-center">パラキャリ会員登録</h2>
+
+<%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :invitation_token, readonly: true %>
+
+  <% if f.object.class.require_password_on_accepting %>
+  
+    <div class="formSet">
+       <div class="text-left">お名前</div>
+       <%= f.text_field :name, placeholder: '  原　キャリー' %>
+      </div>
+
+      <div class="formSet">
+        <div class="text-left">電話番号</div>
+        <%= f.text_field :tel, autofocus: true, placeholder: '  09012345678' %>
+      </div>
+
+      <div class="formSet">
+        <div class="text-left">メールアドレス</div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '  paracari@example.com' %>
+      </div>
+
+
+      <div class="formSet">
+          <div class="text-left">パスワード</div>
+          <% if @minimum_password_length %>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+        <div class="formSet">
+          <div class="text-left">パスワード（確認用）</div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+
+      <div class="formSet">
+      <%= f.submit "会員登録する",class:"button" %>
+      </div>
+
+
+      <% end %>
+
+<% end %>
+
+</div>
+</div>
+</body>

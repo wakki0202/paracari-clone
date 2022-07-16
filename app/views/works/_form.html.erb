@@ -1,0 +1,83 @@
+<%= form_with(model: @work) do |form| %>
+  <% if work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+      <ul>
+        <% work.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  <div class="imageformSet">
+    
+      <%= form.label :images, "画像をアップロード", class: "image_input_btn" %>
+  <% if work.images.present? %>
+      <%= form.file_field :images,multiple: true, class: "image_form",value: params[:images]  %>
+  <% elsif %>
+      <%= form.file_field :images,multiple: true, class: "image_form"  %>
+  <% end %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">タイトル</div>
+    <%= form.text_field :title,class: "form" %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">会社名</div>
+    <%= form.text_field :company_name,class: "form" %>
+  </div>
+
+   <div class="formSet">
+    <div class="text-left">事業者URL</div>
+    <%= form.text_field :link,class: "form" %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">報酬</div>
+    <%= form.text_field :reward,class: "form" %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">仕事内容</div>
+    <%= form.text_area :pcontent, :size => "40*10" %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">報酬支払日</div>
+    <%= form.text_field :rday,class: "form" %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">報酬内容</div>
+    <%= form.text_area :rcontent, :size => "40*10" %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">地域</div>
+    <%= form.text_area :area, class: "formB", :size => "40*10" %>
+  </div>
+
+  <div class="formSet">
+    <div class="text-left">アピールポイント</div>
+    <%= form.text_area :appeal, :size => "40*10" %>
+  </div>
+
+  
+
+
+  <div class="formSet">
+    <div class="text-left">案件ステータス</div>
+    <%= form.select :status, [['審査中'],['公開'], ['非公開'],  ['終了']], { include_blank: false }, { class: "form" } %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

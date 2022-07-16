@@ -1,0 +1,87 @@
+
+<body class="deviseInvite">
+<%= render '/layouts/header' %>
+<div class="Backblack">
+    
+    <div class="inviteArea">
+      <div class="inviteFlex">
+      <div class="inviteFirst">
+        <div class="invitePhrase">
+              <h2>友達や同僚にも</h2>
+              <h1><span>パラキャリをおすすめしてみませんか？</span></h1>
+              <p>招待した方には招待された方の<span>報酬の10%が永続的に支払われます！</span></p>
+              <p>招待された方は初回報酬振込時に<span>1000円プラスで支払われます！</span></p>
+        </div>
+
+          <div class="formArea mt-5">
+              <h3 class="h2">さっそく招待用リンクを送りましょう！</h3>
+
+                  <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+                    <%= render "devise/shared/error_messages", resource: resource %>
+                    <% resource.class.invite_key_fields.each do |field| -%>
+                      <div class="formSet">
+                        <div class="text-left">招待する人のEメール</div>
+                        <%= f.text_field :email,class:"inviteField" %>
+                      </div>
+                    <% end %>
+
+
+                    <div class="formSetInvite">
+                      <%= f.submit "友人に招待メールを送る",data: { confirm: '招待メールを送信しますか？' },class:"button" %>
+                    </div>
+                  <% end %>
+          </div>
+        </div>
+        <div  class="inviteSecond">
+          <div class="text-center">
+            <h3>招待メールを送信後</h3>
+            <p>こんなメールが届きます！</p>
+            <div><%= image_tag "invite.jpg",class:"" %></div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="bg-white w-75 m-auto rounded mt-5">
+    <h1 class="text-center text-black pt-3">招待した友人一覧</h1>
+
+    <table class="table ">
+      <thead>
+        <tr class="heading text-left">
+          <th class=" ">名前</th>
+        </tr>
+      </thead>
+    
+    <tbody>
+    <% @users.each do |user| %>
+     
+     
+           <% if user.invited_by.present? %>
+           <tr class=" text-left">
+           <% if user.invited_by.name == current_user.name %>
+           <td class="">
+            <%= user.name %>
+          </td>
+          <% end %>
+          </tr>
+           <% elsif user.invitername.present? && user.invitername == current_user.name %>
+           <tr class=" text-left">
+            <% if user.invitername == current_user.name %>
+            <td class="">
+            <%= user.name %>
+           </td>
+           <% end %>
+           </tr>
+           <% else %>
+           <% end %>
+        
+      <% end %>
+      </tbody>
+        
+        </table>
+ 
+    
+    </div>
+</div>
+
+</body>

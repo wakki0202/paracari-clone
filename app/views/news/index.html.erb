@@ -1,0 +1,110 @@
+
+
+
+
+<body class="providerPage">
+  <div class="side">
+    <%= render '/works/side' %>
+  </div>
+ 
+  <div class="main">
+    
+  <%= render '/works/side_header' %>
+    
+        
+    <div class="userIndex">
+      <h1 class="text-left">お知らせ</h1>
+      <div class="providerTable">
+     
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary toNew" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          ＋ 新規作成
+        </button>
+
+        <!-- Modal -->
+        <div class="modal w-75 m-auto" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title h4" id="staticBackdropLabel">新規お知らせ作成</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+              <%= form_with(model: @newsnew, local: true) do |form| %>
+              <% if @newsnew.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@newsnew.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+                  <ul>
+                    <% @newsnew.errors.each do |error| %>
+                      <li><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="w-75 m-auto mb-4 mt-2">
+                <%= form.label :タイトル,class:"h4" %>
+                <%= form.text_field :title,class:"form-control",id:"exampleFormControlInput1" %>
+              </div>
+
+              <div class="w-75 m-auto mb-4">
+                <%= form.label :内容,class:"h4" %>
+                <%= form.text_area :content,class:"form-control ",id:"exampleFormControlTextarea1", size: "20x10" %>
+                
+              </div>
+
+                
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                <%= form.submit "作成する",class:"btn btn-primary",data: { confirm:"作成しますか？"} %>    
+                <% end %>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      <div class="search-form">
+        <%= search_form_for @q, url: news_index_path do |f| %>
+            <%= f.label :title, "キーワード",class:"fs-4 " %>
+            <%= f.search_field :title_cont,class:"fs-4 rounded border border-dark" %>
+
+            <%= f.submit "検索",id:"btn",class:"fs-4 " %>
+        <% end %>
+      </div>
+
+        <table class="table userTable ">
+          <thead class="heading border">
+            <tr class="text-left border">
+              <th class=" ">タイトル</th>
+              <th class="">作成日</th>
+              <th class=" "></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @news.each do |news| %>
+              <tr class="text-left">
+                <td class="border "><%= news.title %></td>
+                <td class="border "><%= news.created_at.strftime('%Y年%m月%d日') %></td>
+                <td class="border text-center"><%= link_to '詳細', news,class:"toShow py-1 px-3 text-decoration-none" %></td>
+                
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="text-center pagenation">
+        <%= paginate @news %>
+        </div>
+        </div>
+      </div>
+
+  </div>
+</body>

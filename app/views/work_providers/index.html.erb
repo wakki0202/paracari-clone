@@ -1,0 +1,198 @@
+
+
+
+
+<body class="providerPage">
+
+    
+  <div class="side">
+    <%= render '/works/side' %>
+  </div>
+ 
+  <div class="main">
+   <%= render '/works/side_header' %>
+    <p class="text-center fs-2 fw-bold"><%= flash[:notice] %></p>
+        
+    <div class="userIndex">
+      <h1 class="text-left h1">案件一覧</h1>
+      <div class="providerTable">
+      
+           <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary toNew fs-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          ＋ 新規作成
+        </button>
+
+        <!-- Modal -->
+        <%= form_with(model: @worknew,:multipart => true, local: true) do |form| %>
+        <div class="modal w-100 m-auto" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content ">
+              <div class="modal-header">
+                <h5 class="modal-title h4" id="staticBackdropLabel">新規案件作成</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+              
+              <% if @worknew.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@worknew.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+                  <ul>
+                    <% @worknew.errors.each do |error| %>
+                      <li><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                    <%= form.label :images, "画像をアップロード", class: "h4" %>
+                    <%= form.file_field :images,multiple: true, class: "form-control",id:"exampleFormControlInput1"  %>
+                    <%= form.hidden_field :images_cache %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :タイトル,class:"h4" %>
+                  <%= form.text_field :title,class: "form-control fs-4",id:"exampleFormControlInput1" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :会社名,class:"h4" %>                  
+                  <%= form.text_field :company_name,class: "form-control fs-4",id:"exampleFormControlInput1" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :事業者URL,class:"h4" %>
+                  <%= form.text_field :link,class: "form-control fs-4",id:"exampleFormControlInput1" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :報酬,class:"h4" %>                 
+                  <%= form.text_field :reward,class: "form-control fs-4",id:"exampleFormControlInput1" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :仕事内容,class:"h4" %>
+                  <%= form.text_area :pcontent,class:"form-control fs-4",id:"exampleFormControlTextarea1", size: "20x10" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :報酬支払日,class:"h4" %>
+                  <%= form.text_field :rday,class: "form-control fs-4",id:"exampleFormControlInput1" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :報酬内容,class:"h4" %>
+                  <%= form.text_area :rcontent,class:"form-control fs-4",id:"exampleFormControlTextarea1", size: "20x10" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :地域,class:"h4" %>                 
+                  <%= form.text_area :area, class: "formB",class:"form-control fs-4",id:"exampleFormControlTextarea1", size: "20x10" %>
+                </div>
+
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :アピールポイント,class:"h4" %>
+                  <%= form.text_area :appeal,class:"form-control fs-4",id:"exampleFormControlTextarea1", size: "20x10" %>
+                </div>
+
+                
+
+              <% if current_provider.email == "tanachu_78@yahoo.co.jp" %>
+                <div class="w-75 m-auto mb-4 mt-2">
+                  <%= form.label :ステータス,class:"h4" %>
+                  <%= form.select :status, [['審査中'],['公開中'], ['非公開'],  ['終了']], { include_blank: false }, { class: "form-control fs-4",id:"exampleFormControlInput1" } %>
+                </div>
+           
+                <% end %>
+
+
+
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">閉じる</button>
+                <%= form.submit "作成する",class:"btn btn-primary fs-4",data: { confirm:"作成しますか？"} %>                 
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+
+        
+        
+
+        <div class="search-form">
+        <%= search_form_for @q, url: works_path do |f| %>
+            <%= f.label :name, "絞り込み",class:"fs-4" %>
+            <%= f.select :status_cont, [['公開中'], ['審査中'], ['非公開'], ['公開終了']], { include_blank: 'すべて' }, { class: "rounded formleft fs-4 w-25" } %>
+            <%= f.submit "検索",id:"btn",class:"fs-4 " %>
+        <% end %>
+        </div>
+        <div class="search-form">
+        <%= search_form_for @q do |f| %>
+            <%= f.label :title, "キーワード",class:"fs-4" %>
+            <%= f.search_field :title_cont,class:"border border-dark rounded fs-4" %>
+
+            <%= f.submit "検索",id:"btn",class:"fs-4" %>
+        <% end %>
+      </div>
+
+      <div id="work-list">
+        <table class="table userTable">
+
+        <thead class="heading">
+          <tr class="border text-left">
+          <% if current_provider.email == "tanachu_78@yahoo.co.jp" %>
+            <th>順番</th>
+          <% end %>
+            <th>案件名</th>
+            <th>作成日</th>
+            <th></th>
+            <th></th>
+          <% if current_provider.email == "tanachu_78@yahoo.co.jp" %>
+            <th></th>
+            <th></th>
+            <th></th>
+          <% end %>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @works.each do |work| %>
+          <% if current_provider.email == "tanachu_78@yahoo.co.jp" %>
+          <tr class="text-left">
+              <td><%= work.position %></td>
+              <td style="width:60%" class="border border-black text-break overflow-hidden text-ellipsis" ><a href="/works/<%= work.id %>" class="text-decoration-none"><%= work.title %></a></td>
+              <td class="border border-black"><%= work.created_at.strftime('%Y年%m月%d日') %></td>
+              <td class="border border-black"><% if work.status == nil %>審査待ち<% else %><%= work.status %><% end %></td>
+              <td class="border border-black"><%= link_to "↑↑", {:controller => :works, :action => :move_top, :id => work},class:"text-decoration-none fw-bold" %></td>
+              <td class="border border-black"><%= link_to "↑", {:controller => :works, :action => :move_higher, :id => work},class:"text-decoration-none fw-bold" %></td>
+              <td class="border border-black"><%= link_to "↓",{:controller => :works, :action => :move_lower, :id => work},class:"text-decoration-none fw-bold" %></td>
+              <td class="border border-black"><%= link_to "↓↓",{:controller => :works, :action => :move_bottom, :id => work},class:"text-decoration-none fw-bold" %></td>
+            </tr>
+          <% elsif work.provider_id == current_provider.id || current_provider.email == work.work_providers.email %>
+            <tr class="text-left">
+              
+              <td style="width:60%" class="border border-black"><%= work.title %></td>
+              <td class="border border-black"><%= work.created_at.strftime('%Y年%m月%d日') %></td>
+              <td class="border border-black"><% if work.status == nil %>審査待ち<% else %><%= work.status %><% end %></td>
+              <td class="border border-black text-center"><%= link_to '詳細', work,class:"toShow text-decoration-none px-3 py-1  " %></td>
+              
+            </tr>
+          <% end %>
+          <% end %>
+        </tbody>
+
+    
+      </table>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+   

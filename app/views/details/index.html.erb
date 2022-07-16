@@ -1,0 +1,72 @@
+
+
+
+
+<body class="providerPage">
+  <div class="side">
+    <%= render '/works/side' %>
+  </div>
+
+  <div class="main">
+
+  <%= render '/works/side_header' %>
+
+
+    <div class="userIndex">
+      <h1 class="text-left">お問い合わせ（案件詳細希望者一覧)</h1>
+      <div class="providerTable">
+      <div class="search-form">
+        <%= search_form_for @q, url: details_path do |f| %>
+            <%= f.label :name, "絞り込み",class:"fs-4" %>
+            <%= f.select :status_cont, [['未対応'], ['対応済み']], { include_blank: 'すべて' }, { class: "formleft rounded border border-dark fs-4 w-25" } %>
+            <%= f.submit "検索",id:"btn",class:"fs-4 " %>
+        <% end %>
+        </div>
+        <div class="search-form">
+        <%= search_form_for @q do |f| %>
+            <%= f.label :title, "キーワード",class:"fs-4" %>
+            <%= f.search_field :work_title_cont,class:"fs-4 rounded border border-dark" %>
+
+            <%= f.submit "検索",id:"btn",class:"fs-4 " %>
+        <% end %>
+      </div>
+
+
+         <table class="table userTable">
+        <tr class="heading text-left">
+          <th class="border border-black ">案件名</th>
+          <th class="border border-black ">お客様名</th>
+          <th class="border border-black ">受信日時</th>
+          <th class="border border-black ">対応チェック</th>
+          <th class="border border-black "></th>
+        </tr>
+
+       <% @details.each do |detail| %>
+       <% if current_provider.email == "tanachu_78@yahoo.co.jp" %>
+      <tr class="text-left">
+        <td style="width:40%" class="border border-black"><%= detail.work.title %></td>
+        <td style="width:10%" class="border border-black"><%= detail.user.name %></td>
+        <td style="width:25%" class="border border-black"><%= l detail.created_at %></td>
+        <td style="width:10%" class="border border-black"><%= detail.status %></td>
+        <td style="width:8%" class="border border-black text-center"><%= link_to '詳細', detail,class:"toShow text-decoration-none px-3 py-1  " %></td>
+      </tr>
+      <% elsif detail.work.provider_id == current_provider.id || detail.work.id_second == current_provider.email || detail.work.id_third == current_provider.email %>
+      <tr class="text-left">
+        <td style="width:40%" class="border border-black"><%= detail.work.title %></td>
+        <td style="width:10%" class="border border-black"><%= detail.user.name %></td>
+        <td style="width:25%" class="border border-black"><%= l detail.created_at %></td>
+        <td style="width:10%" class="border border-black"><%= detail.status %></td>
+        <td style="width:8%" class="border border-black text-center"><%= link_to '詳細', detail,class:"toShow text-decoration-none px-3 py-1  " %></td>
+      </tr>
+    <% end %>
+    <% end %>
+
+        </table>
+        <div class=" pagenation">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>

@@ -1,0 +1,1061 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@media (min-width: 710px) {
+  html {
+    font-size: 100%;
+    margin: 0;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+      "游ゴシック体", "Yu Gothic", YuGothic, "メイリオ", Meiryo, Osaka,
+      "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  }
+
+  footer {
+    background-color: white;
+    .footer-title {
+      text-align: center;
+      padding-bottom: 30px;
+      font-size: 20px;
+    }
+    .footer-list {
+      text-align: center;
+      padding-bottom: 16px;
+      ul {
+        display: flex;
+        width: 50%;
+        margin: 0 auto;
+        list-style: none;
+        justify-content: space-evenly;
+        a {
+          text-decoration: none;
+          color: #666;
+        }
+      }
+    }
+    .copyright {
+      text-align: center;
+    }
+  }
+  // Place all the styles related to the tops controller here.
+  // They will automatically be included in application.css.
+  // You can use Sass (SCSS) here: https://sass-lang.com/
+
+  // ---------ここからメイン------------------
+  .top-bg {
+    position: relative;
+    background-image: image-url("FV_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    .title-p {
+      padding-top: 150px;
+      padding-left: 10%;
+      display: flex;
+      flex-direction: column;
+      li {
+        list-style: none;
+      }
+      .subtitleImage{
+        width: 60%;
+      }
+      .main-title {
+        margin-bottom: 22px;
+        font-size: 4.5rem;
+        font-weight: bold;
+        line-height: 1.3;
+        letter-spacing: 0.15rem;
+        font-style: oblique;
+        color: #484c4c;
+        font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      }
+      .css-br{
+        font-size: 6.5rem;
+      }
+      .sub-title {
+        font-style: oblique;
+        line-height: 1.3;
+        font-size: 2.8rem;
+        color: #484c4c;
+        font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+        
+      }
+    }
+    .devices {
+      padding-top: 80px;
+      text-align: center;
+      .iPhone {
+        width: 20%;
+        height: 50%;
+        padding: 0 20px 0 20px;
+        box-shadow: 0 30px 10px -30px #808080;
+      }
+      .iPhone-bottom {
+        width: 20%;
+        height: auto;
+        padding: 0 20px 0 20px;
+        margin-top: 5%;
+        box-shadow: 0 30px 10px -30px #808080;
+      }
+    }
+  }
+
+  .spantitle{
+    background: linear-gradient(transparent 70%, #ff6e35 60%);
+  }
+  
+
+  // --------ここから動画---------------------------------
+  .serviceTitle{
+    width:60%;
+  }
+  .movie {
+    padding-top: 150px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #fceabb;
+    h1 {
+      margin: 0 auto 30px;
+      text-align: center;
+      font-size: 35px;
+      font-weight: bold;
+       font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+    
+    .movie-frame {
+      margin: auto;
+      width: 80%;
+    }
+  }
+
+  // --------ここからメリット---------------------------------
+  .top-page {
+    .subtitle {
+       font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  }
+  .meritTitle{
+    width: 50%;
+  }
+  .merit {
+    padding: 0 15%;
+  }
+
+  .merit-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: center;
+    margin-bottom: 80px;
+    justify-content: space-between;
+  }
+
+  .merit-item {
+    width: 48%;
+    padding: 1% 3%;
+    letter-spacing: 0.05rem;
+    margin-bottom: 10px;
+    img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    h3 {
+       font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-align: left;
+      margin-bottom: 20px;
+      
+    }
+    p {
+       font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.15rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+  }
+
+  // --------ここから案件一覧---------------------------
+  .worksTitle{
+    width:35%;
+  }
+  .slide {
+    display: none;
+    .slick-slide {
+      width: 350px;
+    }
+
+    &.slick-initialized {
+      display: block;
+    }
+  }
+
+  .slick-slide {
+    margin: 0 20px; /*スライド左右の余白調整*/
+    height: 27rem;
+  }
+
+  .Items-list {
+    padding: 30px 0;
+    background: #fceabb; 
+    text-align: center;
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+
+  .Item {
+    height: 27rem;
+    padding: 25px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+
+  .Item-top {
+    padding: 10px 0 10px;
+  }
+
+  .fa-hand-holding-heart,
+  .fa-coins,
+  .fa-building,
+  .fa-file-alt,
+  .fa-tshirt,
+  .fa-shield-alt {
+    color: #b8860b;
+    font-size: 30px;
+  }
+
+  .Item-title {
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    color: #b8860b;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.05rem;
+    margin-top: 15px;
+    line-height: 1.1;
+  }
+
+  .border {
+    border-bottom: 2px solid beige;
+  }
+  .Item-bottom {
+    padding: 10px 10px 0;
+    text-align: left;
+    & p {
+      font-size: 14px;
+    }
+  }
+
+  .SeeMore {
+    margin-top: 60px;
+  }
+
+  // ----ここから報酬獲得の流れ------------------
+
+  .flowTitle{
+    width: 40%;
+  }
+  .reward{
+    margin-top: 100px;
+  }
+  .parent {
+    .child {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .flex {
+    padding: 0 3%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #flex{
+    display: flex;
+  }
+
+  .stepOne {
+    border: 1px solid #828282;
+    box-shadow: 6px 6px #828282;
+    border-radius: 1rem;
+    width: 22%;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+    img {
+      border-radius: 0.5rem;
+    }
+
+    h4 {
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      text-align: center;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+
+    
+    span {
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      color: white;
+      font-weight: normal;
+      padding: 3px;
+      background-color: #eb630d;
+    }
+
+    a.toWorks {
+      text-decoration: none !important;
+      background-color: #eb630d;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      color:white;
+    }
+
+    .stepFooter {
+      padding-top: 25px;
+      font-size: 1.25em;
+      text-align: center;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+  }
+
+  .stepImage {
+    width: 100%;
+    height: 180px;
+    border-radius: 1rem;
+  }
+
+  .arrow {
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+    margin-top: 150px;
+    border: 3px solid;
+    border-color: #565656 #565656 transparent transparent;
+    transform: rotate(45deg);
+    justify-content: center;
+  }
+
+  .subtitle {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 60px;
+  }
+
+  .reward-start {
+    margin-bottom: 150px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-home {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #eb630d;
+    padding: 30px 75px;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-decoration: none !important;
+  }
+  .btn-home:hover {
+    opacity: 0.6;
+  }
+
+  // --------ここからFAQ---------------------------
+  .faqTitle{
+    width: 20%;
+  }
+  .FAQ-items {
+    padding: 0 15%;
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 2em;
+    align-content: flex-start;
+    margin-top: 50px;
+    margin-bottom: 200px;
+
+    li {
+      display: block;
+      line-height: 1.5;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 0.08rem;
+    }
+  }
+
+  .Q-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    padding: 2em;
+    margin-bottom: 10px;
+    border-radius: 1rem;
+  }
+
+  .A {
+    display: none;
+  }
+
+  label {
+    display: block;
+    background: #fff;
+  }
+
+  label:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .FAQ-item {
+    input[type="checkbox"] {
+      display: none;
+      
+    }
+  }
+  #Q1:checked + .A1 {
+    display: block;
+     font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+  #Q2:checked + .A2 {
+    display: block;
+     font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+  #Q3:checked + .A3 {
+    display: block;
+     font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+  #Q4:checked + .A4 {
+    display: block;
+     font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+
+  #Q5:checked + .A5 {
+    display: block;
+  }
+
+  // --------ここから利用者の声---------------
+  .voiceTitle{
+    width: 50%;
+  }
+  .wave {
+    padding-top: 150px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .wave-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .wave-2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .wave-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .Voices {
+    padding: 20px 0;
+    background-color: #f5f5f5;
+    .parent {
+      padding-top: 10px;
+    }
+  }
+
+  .flexVoice {
+    padding: 0 15%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Voice {
+    box-shadow: 0px 0px 2px;
+    border-radius: 1rem;
+    width: 30%;
+    font-weight: bold;
+    background-color: #fff;
+    h4 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .Voice-title {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 30px 0 0 30px;
+      span.under-line {
+        background: linear-gradient(transparent 50%, #f8e12e 50%);
+      }
+    }
+
+    .comment {
+      width: 90%;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.625;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      color: #484c4c;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+
+    .feature {
+      padding-left: 30px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .VoiceImage {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  .slide-bottom {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 1.3s 0s ease-out;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 100%;
+    margin: 0;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+      "游ゴシック体", "Yu Gothic", YuGothic, "メイリオ", Meiryo, Osaka,
+      "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  }
+
+  footer {
+    background-color: white;
+    .footer-title {
+      text-align: center;
+      padding-bottom: 30px;
+      font-size: 20px;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+    .footer-list {
+      text-align: center;
+      padding-bottom: 16px;
+      ul {
+        display: flex;
+        width: 50%;
+        margin: 0 auto;
+        list-style: none;
+        justify-content: space-evenly;
+        a {
+          text-decoration: none;
+          color: #666;
+        }
+      }
+    }
+    .copyright {
+      text-align: center;
+    }
+  }
+
+  main {
+    width: 100%;
+  }
+
+  * {
+    float: none;
+    position: static;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .css-br::after {
+    content: "\A";
+    white-space: pre;
+  }
+
+  // ---------ここからメイン------------------
+  .top-bg {
+    position: relative;
+    background-image: image-url("FV_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    a {
+      text-decoration: none;
+      padding: 0 0;
+    }
+    .title-p {
+      padding-top: 300px;
+      padding-left: 5%;
+      padding-right: 5%;
+      display: flex;
+      flex-direction: column;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      li {
+        list-style: none;
+        padding: 0 0;
+      }
+      .subtitleImage{
+        width: 100%;
+      }
+      .main-title {
+        margin-bottom: 22px;
+        font-size: 2.8rem;
+        font-weight: bold;
+        line-height: 1.3;
+        letter-spacing: 0.15rem;
+        color: #484c4c;
+        font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+      }
+      .css-br{
+        font-size: 4rem;
+      }
+      .sub-title {
+        line-height: 1.3;
+        font-size: 1.8rem;
+        color: #484c4c;
+        br {
+          display: none;
+        }
+      }
+    }
+    .devices {
+      display: none;
+    }
+  }
+
+   .spantitle{
+    background: linear-gradient(transparent 70%, #ff6e35 60%);
+  }
+  // --------ここから動画---------------------------------
+  .movie {
+    
+    background-color: #fceabb;
+    padding-top: 120px;
+    padding-bottom: 70px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      padding-bottom: 10px;
+      font-weight: bold;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+    .movie-frame {
+      margin: auto;
+      width: 100%;
+    }
+  }
+  // -----------ここからメリット----------------------
+  .top-page {
+    .subtitle {
+      text-align: center;
+      padding: 0 15%;
+      padding-top: 30px;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+  }
+  .merit {
+    padding: 0 15%;
+  }
+
+  .merit-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: center;
+    margin-bottom: 150px;
+  }
+
+  .merit-item {
+    width: 500px;
+    padding: 1% 3%;
+    letter-spacing: 0.05rem;
+    margin-bottom: 30px;
+    // animation: SlideIn 1.6s;
+    img {
+      width: 120px;
+    }
+    h3 {
+      font-weight: bold;
+      font-size: 2.5rem;
+      // color: rgb(255, 84, 16);
+      text-align: left;
+      margin-bottom: 20px;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+    p {
+      font-size: 1.5rem;
+      letter-spacing: 0.15rem;
+      line-height: 1.7;
+      text-align: left;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+  }
+  // --------ここから案件一覧---------------------------
+  .slide {
+    display: none;
+    .slick-slide {
+      width: 350px;
+    }
+
+    &.slick-initialized {
+      display: block;
+    }
+  }
+
+  .slick-slide {
+    margin: 0 20px; /*スライド左右の余白調整*/
+    height: 27rem;
+  }
+  .Items-list {
+    padding: 70px 0 100px;
+    background: #fceabb; /* fallback for old browsers */
+
+    text-align: center;
+  }
+
+  .Item {
+    height: 27rem;
+    padding: 25px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .Item-top {
+    padding: 10px 0 10px;
+  }
+
+  .fa-hand-holding-heart,
+  .fa-coins,
+  .fa-building,
+  .fa-file-alt,
+  .fa-tshirt,
+  .fa-shield-alt {
+    color: #b8860b;
+    font-size: 30px;
+  }
+
+  .Item-title {
+    color: #b8860b;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.05rem;
+    margin-top: 15px;
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    line-height: 1.1;
+  }
+
+  .border {
+    border-bottom: 2px solid beige;
+  }
+  .Item-bottom {
+    padding: 10px 10px 0;
+    text-align: left;
+    & p {
+      font-size: 14px;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+  }
+
+  .SeeMore {
+    margin-top: 60px;
+  }
+  // ----ここから報酬獲得の流れ------------------
+  .parent {
+    margin-bottom: 150px;
+    .child {
+      display: flex;
+      justify-content: center;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .subtitle {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .reward-flow {
+    // margin: 50px 20%;
+    display: flex;
+  }
+
+  .step-num {
+    display: none;
+  }
+
+  .step-items {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    background-color: #fff;
+    padding: 10px 7%;
+  }
+
+  .step-item {
+    list-style: none;
+    margin-bottom: 10%;
+  }
+  .step-title {
+    font-weight: bold;
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+  .step-content {
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+
+  .reward-start {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-home {
+    margin-top: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #eb630d;
+    padding: 28px 50px;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-decoration: none !important;
+  }
+  .btn-home:hover {
+    opacity: 0.6;
+  }
+
+  .stepOne {
+    border: 1px solid #828282;
+    box-shadow: 6px 6px #828282;
+    width: 70%;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-radius: 0.5rem;
+
+    h4 {
+      text-align: center;
+      font-weight: bold;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+
+    span {
+      color: white;
+      font-weight: normal;
+      padding: 3px;
+      background-color: #ff9b3d;
+      font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    }
+
+    .stepFooter {
+      padding-top: 25px;
+      font-size: 1em;
+      text-align: center;
+    }
+
+    a.toWorks {
+      text-decoration: none !important;
+      background-color: #eb630d;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      color:white;
+    }
+  }
+  // --------ここからFAQ---------------------------
+  .FAQ {
+    .parent {
+      margin-bottom: 0;
+    }
+  }
+
+.faqTitle{
+  width: 60%;
+}
+
+  .FAQ-items {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 0 15%;
+    margin-bottom: 150px;
+    letter-spacing: 0.08rem;
+  }
+
+  .Q-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 2em;
+    margin-bottom: 10px;
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+
+  .A {
+    display: none;
+  }
+
+  label {
+    display: block;
+    background: #fff;
+  }
+
+  label:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .FAQList {
+    display: block;
+    padding: 0 1em 1em 1em;
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  }
+
+  .FAQ-item {
+    input[type="checkbox"] {
+      display: none;
+    }
+  }
+  #Q1:checked + .A1 {
+    display: block;
+  }
+  #Q2:checked + .A2 {
+    display: block;
+  }
+  #Q3:checked + .A3 {
+    display: block;
+  }
+  #Q4:checked + .A4 {
+    display: block;
+  }
+
+  #Q5:checked + .A5 {
+    display: block;
+  }
+
+  // --------ここから利用者の声---------------
+  .wave {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .wave-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .wave-2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .wave-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .Voices {
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    .parent {
+      padding-top: 30px;
+      margin-bottom: 0;
+    }
+    .flexVoice {
+      padding: 0 15%;
+      margin: 0 auto;
+      display: grid;
+    }
+
+    .Voice {
+      box-shadow: 0px 0px 2px;
+      border-radius: 1rem;
+      width: 100%;
+      margin-bottom: 30px;
+      font-weight: bold;
+      background-color: #fff;
+
+      .Voice-title {
+        font-weight: bold;
+        padding: 30px 0 0 30px;
+        span.under-line {
+          font-size: 18px;
+          background: linear-gradient(transparent 50%, #f8e12e 50%);
+        }
+      }
+
+      h4 {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .comment {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.625;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        color: #484c4c;
+      }
+
+      .feature {
+        padding-left: 30px;
+        padding-bottom: 20px;
+      }
+    }
+
+    .VoiceImage {
+      width: 100%;
+      border-radius: 1rem;
+    }
+  }
+
+  .slide-bottom {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 1.3s 0s ease-out;
+  }
+}
